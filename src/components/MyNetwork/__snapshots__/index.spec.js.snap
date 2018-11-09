@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyNetwork component Should render MyNetwork component 1`] = `
+<h1>
+  My Network Component
+</h1>
+`;
