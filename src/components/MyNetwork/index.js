@@ -1,7 +1,4 @@
 import React from 'react';
-import {saveToken} from 'utils/localStorage/index';
-import globalAxios from 'api/index';
-import axios from 'axios';
 
 class MyNetwork extends React.Component {
 	constructor(props) {
@@ -9,11 +6,7 @@ class MyNetwork extends React.Component {
 	}
 
 	render() {
-		return (
-			<h1>
-				My Network Component
-			</h1>
-		)
+		return ( <h1>My Network Component</h1> )
 	}
 }
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {getToken} from '../utils/localStorage/index';
+import {getToken} from 'utils/localStorage/index';
 
 const token = getToken();
 

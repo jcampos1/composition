@@ -1,5 +1,3 @@
-import types from './types/index';
-
 const INITIAL_STATE = {
 }
 
