@@ -1,8 +1,9 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import PropTypes from 'prop-types';
+import LoginContainer from 'components/User/Login/container/index';
 import MyNetwork from 'components/MyNetwork/index';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 class Root extends React.PureComponent {
 	render() {
@@ -10,7 +11,11 @@ class Root extends React.PureComponent {
 		return(
 			<Provider store={store}>
 				<Router>
-					<Route path="/" component={MyNetwork}/>
+					<React.Fragment>
+						<Route exact path="/" component={() => <Redirect to="/login"/>}/>
+						<Route exact path="/login" component={LoginContainer}/>
+						<Route exact path="/my-network" component={MyNetwork}/>
+					</React.Fragment>
 				</Router>
 			</Provider>
 		)
