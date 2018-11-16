@@ -7,7 +7,7 @@ import {saveToken} from 'utils/localStorage/index';
 // the hoc
 import { withNamespaces } from 'react-i18next';
 
-class LoginForm extends React.Component {
+export class LoginForm extends React.Component {
 	constructor (props) {
 		super(props);
 

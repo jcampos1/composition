@@ -1,50 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginForm component Should render LoginForm component when there are errors 1`] = `
-<form
-  name="login-form"
+<ReactFinalForm
   onSubmit={[Function]}
 >
-  <div
-    className="alert alert-danger"
-    role="alert"
-  >
-    <label
-      key="error_login{index}"
-    >
-      Unable to log in with provided credentials.
-    </label>
-  </div>
-  <div>
-    <label
-      htmlFor="username"
-    >
-      Username or email
-    </label>
-    <Field
-      className="form-control"
-      component="input"
-      name="username"
-      type="text"
-    />
-  </div>
-  <div>
-    <label
-      htmlFor="password"
-    >
-      Password
-    </label>
-    <Field
-      className="form-control"
-      component="input"
-      name="password"
-      type="password"
-    />
-  </div>
-  <ButtonForm
-    isLoading={false}
-    name="Log in"
-    nameLoading="Logging in"
-  />
-</form>
+  <Component />
+</ReactFinalForm>
 `;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component Should render Error component when errors is empty 1`] = `""`;
+
+exports[`Error component Should render Error component when errors is not empty 1`] = `
+<div
+  className="alert alert-danger"
+  role="alert"
+>
+  <label
+    key="error_login{index}"
+  >
+    Unable to log in with provided credentials.
+  </label>
+</div>
+`;
