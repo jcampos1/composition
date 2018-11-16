@@ -1,0 +1,8 @@
+{
+	"login": {
+		"username": "Username or email",
+		"password": "Password",
+		"btn": "Log in",
+		"btnLoading": "Logging in",
+	}
+}

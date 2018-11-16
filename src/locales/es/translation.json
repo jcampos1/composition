@@ -1,0 +1,8 @@
+{
+	"login": {
+		"username": "Usuario o correo",
+		"password": "Contraseña",
+		"login_btn": "Iniciar sesión",
+		"login_btn_loading": "Iniciando sesión"
+	}
+}

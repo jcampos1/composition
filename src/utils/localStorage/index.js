@@ -11,3 +11,7 @@ export const removeToken = () => {
 	const token = localStorage.removeItem('token');
 	return token;
 };
+
+export const saveLanguage = lng => {
+	localStorage.setItem('i18nextLng', lng);
+};

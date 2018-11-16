@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 class Root extends React.PureComponent {
 	render() {
 		const {store} = this.props;
+		
 		return(
 			<Provider store={store}>
 				<Router>

@@ -16,7 +16,5 @@ describe('LoginForm component', () => {
 				errors={errors} />);
 
 		expect(wrapper).toMatchSnapshot();
-
-		// expect(wrapper.find("form.login-form div.alert label")).toHaveLength(errors.length);
 	});
 });
