@@ -1,9 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Error extends React.PureComponent {
+class Error extends React.Component {
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            errors: []
+        };
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevProps.errors!==this.props.errors){
+            const {errors} = this.props;
+
+            let errs = [];
+            Object.keys(errors).map(key => {
+                errs.push(errors[key]);
+                return key;
+            });
+
+            this.setState({
+                errors: errs
+            });
+        }
+    }
+
     render() {
-        const {errors} = this.props;
+        const {errors} = this.state;
 
         if ( errors.length === 0)
             return null;
@@ -11,8 +35,8 @@ class Error extends React.PureComponent {
         return (
             <div className="alert alert-danger" role="alert">
                 {
-                    errors.map((error2, index) => (
-                        <label key={`error_login{index}`}>{error2}</label>
+                    errors.map((error, index) => (
+                        <label key={`error${index}`}>{error}</label>
                     ))
                 }
             </div>
@@ -21,7 +45,7 @@ class Error extends React.PureComponent {
 }
 
 Error.propTypes = {
-    errors: PropTypes.array.isRequired
+    errors: PropTypes.object.isRequired
 }
 
 export default Error;

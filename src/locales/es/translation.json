@@ -1,8 +1,15 @@
 {
+	"username": "Usuario o correo",
+	"password": "Contraseña",
+	"email": "Correo",
 	"login": {
-		"username": "Usuario o correo",
-		"password": "Contraseña",
 		"login_btn": "Iniciar sesión",
 		"login_btn_loading": "Iniciando sesión"
+	},
+	"signup": {
+		"confirm_password": "Confirmar contraseña",
+		"phone_number": "Teléfono",
+		"signup_btn": "Registrarse",
+		"signup_btn_loading": "Registrando"
 	}
 }

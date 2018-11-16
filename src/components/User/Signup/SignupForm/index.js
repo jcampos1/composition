@@ -7,7 +7,7 @@ import {saveToken} from 'utils/localStorage/index';
 // the hoc
 import { withNamespaces } from 'react-i18next';
 
-export class LoginForm extends React.Component {
+export class SignupForm extends React.Component {
 	constructor (props) {
 		super(props);
 
@@ -23,8 +23,9 @@ export class LoginForm extends React.Component {
 		this.setState({
 			isLoading: true
 		}, () => {
-			globalAxios.post('/accounts/login/', data)
+			globalAxios.post('/accounts/signup/', data)
 			.then(response => {
+				console.log(response);
 				// Save token in local storage
 				saveToken(response.data.key);
 				this.setState({
@@ -50,19 +51,31 @@ export class LoginForm extends React.Component {
 			<Form onSubmit={this.handleSubmit}>
 				{
 					({handleSubmit, values, submitting}) => (
-						<form name="login-form" onSubmit={handleSubmit}>
+						<form name="signup-form" onSubmit={handleSubmit}>
 							<Error errors={errors}/>
 							<div>
 								<label htmlFor="username">{t('username')}</label>
 								<Field name="username" component="input" type="text" className="form-control" placeholder={t('username')} />
 							</div>
 							<div>
-								<label htmlFor="password">{t('password')}</label>
-								<Field name="password" component="input" type="password" className="form-control" placeholder={t('password')} />
+								<label htmlFor="email">{t('email')}</label>
+								<Field name="email" component="input" type="email" className="form-control" placeholder={t('email')} />
+							</div>
+							<div>
+								<label htmlFor="password1">{t('password')}</label>
+								<Field name="password1" component="input" type="password" className="form-control" placeholder={t('password')} />
+							</div>
+							<div>
+								<label htmlFor="password2">{t('signup.confirm_password')}</label>
+								<Field name="password2" component="input" type="password" className="form-control" placeholder={t('signup.confirm_password')} />
+							</div>
+							<div>
+								<label htmlFor="phone_number">{t('signup.phone_number')}</label>
+								<Field name="phone_number" component="input" type="text" className="form-control" placeholder={t('signup.phone_number')} />
 							</div>
 							<ButtonForm 
-								name={t('login.login_btn')} 
-								nameLoading={t('login.login_btn_loading')}
+								name={t('signup.signup_btn')} 
+								nameLoading={t('signup.signup_btn_loading')}
 								isLoading={isLoading}/>
 						</form>
 					)
@@ -72,4 +85,4 @@ export class LoginForm extends React.Component {
 	}
 }
 
-export default withNamespaces()(LoginForm);
+export default withNamespaces()(SignupForm);
