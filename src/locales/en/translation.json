@@ -6,6 +6,12 @@
 	"forgot_password": "Forgot your password",
 	"without_account": "Do not have a 1123 Group account?",
 	"create_account": "Create an account",
+	"footer": {
+		"policy": "Privacy policy",
+		"terms_and_conditions": "Terms and conditions",
+		"year": "2018",
+		"copyright": "1123 Global Inc. All right reserved."
+	},
 	"language": {
 		"title": "LANGUAGE"
 	},

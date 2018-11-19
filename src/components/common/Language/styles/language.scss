@@ -7,11 +7,11 @@ $margin-between-containers: 12px;
 	}
 
 	.language__title {
-		color: #fff;
+		color: #fff !important;
 		display: inline-block;
 		margin-right: $margin-between-containers;
 		label {
-			color: inherit;
+			color: inherit !important;
 		}
 	}
 
@@ -23,7 +23,6 @@ $margin-between-containers: 12px;
 		label {
 			color: inherit;
 			font-size: 14px;
-			font-family: 'Open Sans', sans-serif;
     		font-weight: 600;
 			&.language__options__btn-es {
 				color: #666;

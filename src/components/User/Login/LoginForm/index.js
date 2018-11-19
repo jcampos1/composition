@@ -50,29 +50,39 @@ export class LoginForm extends React.Component {
 
 		return (
 			<div className="login-form shadow-lg p-5 bg-white rounded">
-				<h2 className="login-form__title mb-4">{t('login_title')}</h2>
+				<h2 className="login-form__title mb-5">{t('login_title')}</h2>
 				<Form onSubmit={this.handleSubmit}>
 					{
 						({handleSubmit, values, submitting}) => (
 							<form name="login-form" onSubmit={handleSubmit}>
 								<Error errors={errors}/>
-								<div>
-									<label htmlFor="username">{t('username')}</label>
-									<Field name="username" component="input" type="text" className="form-control" placeholder={t('username')} />
+								<div className="form-group">
+								  	<div className="input-group">
+										<Field name="username" component="input" type="text" className="form-control" placeholder={t('username')} />
+										<span className="input-group-icon" id="exampleIconInput1Help">
+									    	<img className="material-icons" src="/images/ett-username.svg" width="35px" alt="language" />
+									    </span>
+									</div>
 								</div>
-								<div className="mb-2">
-									<label htmlFor="password">{t('password')}</label>
-									<Field name="password" component="input" type="password" className="form-control" placeholder={t('password')} />
+								<div className="form-group mb-2">
+								  	<div className="input-group">
+										<Field name="password" component="input" type="password" className="form-control" placeholder={t('password')} />
+										<span className="input-group-icon" id="exampleIconInput1Help">
+									    	<img className="material-icons" src="/images/ett-password.svg" width="35px" alt="language" />
+									    </span>
+									</div>
 								</div>
-								<div className="login-form__small mb-4">
-									<label>{t('forgot_password')}</label>
+								<div className="login-form__tab">
+									<div className="login-form__small mb-4">
+										<label>{t('forgot_password')}</label>
+									</div>
+									<ButtonForm 
+										name={t('login.login_btn')} 
+										nameLoading={t('login.login_btn_loading')}
+										isLoading={isLoading}/>
+									<label className="login-form__small mt-3 d-block text-center">{t('without_account')}</label>
+									<Link to="/signup" className="login-form__tab__create_account d-block text-center">{t('create_account')}</Link>
 								</div>
-								<ButtonForm 
-									name={t('login.login_btn')} 
-									nameLoading={t('login.login_btn_loading')}
-									isLoading={isLoading}/>
-								<label className="login-form__small mt-2 d-block">{t('without_account')}</label>
-								<Link to="/signup" className="d-block text-center">{t('create_account')}</Link>
 							</form>
 						)
 					}

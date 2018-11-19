@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$font-color: #666;
+
+* {
+	font-family: "Open Sans" !important, sans-serif !important;
+	color: $font-color !important;
+}
+
+button {
+	font-weight: 800 !important;
+	font-size: 15px !important;
+	border-radius: 10px !important;
+	padding: 12px 30px !important;
+	color: #fff !important;
+	&.btn-primary {
+		background: linear-gradient(to bottom, 
+			rgba(132,118,244,1) 0%, 
+			rgba(98,116,226,1) 51%, 
+			rgba(64,114,208,1) 100%
+		) !important;
+	}
+
+	&.btn-raised {
+		color: inherit !important;
+	}
+
+	&.btn {
+		text-transform: capitalize !important;
+	}
+}

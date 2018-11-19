@@ -1,5 +1,4 @@
 import React from 'react';
-import i18n from 'i18n';
 import './styles/HeaderUser.css';
 import {Link} from 'react-router-dom';
 import Language from 'components/common/Language/index';

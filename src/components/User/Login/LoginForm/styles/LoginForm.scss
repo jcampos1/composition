@@ -1,8 +1,18 @@
 .login-form {
 	h2.login-form__title {
-		font-family: 'Open Sans', sans-serif;
     	font-weight: 700;
-    	color: #83e2ff;
+    	color: #83e2ff !important;
+	}
+
+	.login-form__tab {
+		padding-left: 50px; 
+		.login-form__tab__create_account {
+			color: #4172d0 !important;
+    		font-weight: 700;
+		}
+		a:link {
+			text-decoration: none;
+		}
 	}
 
 	.login-form__small {
@@ -22,6 +32,13 @@
 	.login-form {
 		h2.login-form__title {
 			font-size: 22px;
+		}
+
+		.login-form__tab {
+			padding-left: 0; 
+			label:first-child {
+				padding-left: 50px; 
+			}
 		}
 	}
 }

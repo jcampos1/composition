@@ -1,0 +1,18 @@
+.footer {
+  background-color: #eee;
+  color: #666;
+  width: 100%;
+  margin: 0; }
+  .footer .footer__terms_and_conditions {
+    padding-left: 70px; }
+  .footer .footer__copyright {
+    text-align: right;
+    padding-right: 70px; }
+
+@media (max-width: 576px) {
+  .footer .footer__terms_and_conditions {
+    text-align: center;
+    padding: 0; }
+  .footer .footer__copyright {
+    padding: 0;
+    text-align: center; } }

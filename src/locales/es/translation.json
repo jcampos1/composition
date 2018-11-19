@@ -6,11 +6,17 @@
 	"forgot_password": "Recuperar contraseña",
 	"without_account": "¿No tienes una cuenta 1123 Group?",
 	"create_account": "Crear una cuenta",
+	"footer": {
+		"policy": "Politicas de privacidad",
+		"terms_and_conditions": "Términos y condiciones",
+		"year": "2018",
+		"copyright": "1123 Global Inc. Todos los derechos reservados."
+	},
 	"language": {
 		"title": "IDIOMA"
 	},
 	"login": {
-		"login_btn": "Iniciar sesión",
+		"login_btn": "Ingresar",
 		"login_btn_loading": "Iniciando sesión"
 	},
 	"signup": {
