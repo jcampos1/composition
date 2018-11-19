@@ -11,7 +11,7 @@ class Error extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevProps.errors!==this.props.errors){
+        if(prevProps.errors !== this.props.errors){
             const {errors} = this.props;
 
             let errs = [];

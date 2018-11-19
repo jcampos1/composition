@@ -1,0 +1,15 @@
+.header {
+	width: 100%;
+	height: 400px !important;
+	background-image: url("/images/background-header.svg");
+	background-repeat: repeat;
+	.header__language {
+		position: absolute;
+		right: 2%;
+		top: 20px;
+	}
+
+	.header__logo {
+		text-align: center;
+	}
+}

@@ -4,8 +4,10 @@ import ButtonForm from 'components/common/ButtonForm/index';
 import Error from 'components/common/Error/index';
 import globalAxios from 'config/api/index';
 import {saveToken} from 'utils/localStorage/index';
+import {Link} from 'react-router-dom';
 // the hoc
 import { withNamespaces } from 'react-i18next';
+import './styles/LoginForm.scss';
 
 export class LoginForm extends React.Component {
 	constructor (props) {
@@ -47,27 +49,35 @@ export class LoginForm extends React.Component {
 		const {t} = this.props;
 
 		return (
-			<Form onSubmit={this.handleSubmit}>
-				{
-					({handleSubmit, values, submitting}) => (
-						<form name="login-form" onSubmit={handleSubmit}>
-							<Error errors={errors}/>
-							<div>
-								<label htmlFor="username">{t('username')}</label>
-								<Field name="username" component="input" type="text" className="form-control" placeholder={t('username')} />
-							</div>
-							<div>
-								<label htmlFor="password">{t('password')}</label>
-								<Field name="password" component="input" type="password" className="form-control" placeholder={t('password')} />
-							</div>
-							<ButtonForm 
-								name={t('login.login_btn')} 
-								nameLoading={t('login.login_btn_loading')}
-								isLoading={isLoading}/>
-						</form>
-					)
-				}
-			</Form>
+			<div className="login-form shadow-lg p-5 bg-white rounded">
+				<h2 className="login-form__title mb-4">{t('login_title')}</h2>
+				<Form onSubmit={this.handleSubmit}>
+					{
+						({handleSubmit, values, submitting}) => (
+							<form name="login-form" onSubmit={handleSubmit}>
+								<Error errors={errors}/>
+								<div>
+									<label htmlFor="username">{t('username')}</label>
+									<Field name="username" component="input" type="text" className="form-control" placeholder={t('username')} />
+								</div>
+								<div className="mb-2">
+									<label htmlFor="password">{t('password')}</label>
+									<Field name="password" component="input" type="password" className="form-control" placeholder={t('password')} />
+								</div>
+								<div className="login-form__small mb-4">
+									<label>{t('forgot_password')}</label>
+								</div>
+								<ButtonForm 
+									name={t('login.login_btn')} 
+									nameLoading={t('login.login_btn_loading')}
+									isLoading={isLoading}/>
+								<label className="login-form__small mt-2 d-block">{t('without_account')}</label>
+								<Link to="/signup" className="d-block text-center">{t('create_account')}</Link>
+							</form>
+						)
+					}
+				</Form>
+			</div>
 		);
 	}
 }

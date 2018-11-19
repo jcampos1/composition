@@ -2,6 +2,13 @@
 	"username": "Username or email",
 	"password": "Password",
 	"email": "Email",
+	"login_title": "Log in",
+	"forgot_password": "Forgot your password",
+	"without_account": "Do not have a 1123 Group account?",
+	"create_account": "Create an account",
+	"language": {
+		"title": "LANGUAGE"
+	},
 	"login": {
 		"login_btn": "Log in",
 		"login_btn_loading": "Logging in"

@@ -2,6 +2,13 @@
 	"username": "Usuario o correo",
 	"password": "Contraseña",
 	"email": "Correo",
+	"login_title": "Ingresar",
+	"forgot_password": "Recuperar contraseña",
+	"without_account": "¿No tienes una cuenta 1123 Group?",
+	"create_account": "Crear una cuenta",
+	"language": {
+		"title": "IDIOMA"
+	},
 	"login": {
 		"login_btn": "Iniciar sesión",
 		"login_btn_loading": "Iniciando sesión"

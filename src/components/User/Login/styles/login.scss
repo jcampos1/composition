@@ -1,0 +1,18 @@
+.content {
+	background-color: #eee;
+	text-align: center;
+	.content__login_form {
+		text-align: initial;
+		top: -100px;
+		max-width: 500px;
+		margin: auto;
+	}
+}
+
+@media (max-width: 576px) {
+	.content {
+		.content__login_form {
+			max-width: 350px;
+		}
+	}
+}

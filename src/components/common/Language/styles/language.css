@@ -1,0 +1,42 @@
+.language .language__img {
+  display: inline-block;
+  margin-right: 12px; }
+
+.language .language__title {
+  color: #fff;
+  display: inline-block;
+  margin-right: 12px; }
+  .language .language__title label {
+    color: inherit; }
+
+.language .language__options {
+  width: 90px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer; }
+  .language .language__options label {
+    color: inherit;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; }
+    .language .language__options label.language__options__btn-es {
+      color: #666;
+      background-color: #ccc;
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+      width: 45px;
+      height: 26px;
+      line-height: 26px;
+      margin: 0; }
+    .language .language__options label.language__options__btn-active {
+      background-color: #24bbf0 !important;
+      color: #fff !important; }
+    .language .language__options label.language__options__btn-en {
+      color: #666;
+      background-color: #ccc;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+      width: 45px;
+      height: 26px;
+      line-height: 26px;
+      margin: 0; }

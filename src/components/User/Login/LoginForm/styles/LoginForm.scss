@@ -1,0 +1,27 @@
+.login-form {
+	h2.login-form__title {
+		font-family: 'Open Sans', sans-serif;
+    	font-weight: 700;
+    	color: #83e2ff;
+	}
+
+	.login-form__small {
+		label {
+		    display: table-cell;
+    		vertical-align: middle;
+    		position: relative;
+		}
+	}
+
+	&.rounded {
+		border-radius: 20px !important;
+	}
+}
+
+@media (max-width: 576px) {
+	.login-form {
+		h2.login-form__title {
+			font-size: 22px;
+		}
+	}
+}

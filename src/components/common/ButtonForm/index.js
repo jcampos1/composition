@@ -9,9 +9,9 @@ class ButtonForm extends React.PureComponent {
 			<React.Fragment>
 			{
 				isLoading ? ( 
-					<button className="form-control btn btn-primary" disabled={true}>{nameLoading}...</button>
+					<button className="btn btn-info my-2" type="submit" disabled={true}>{nameLoading}...</button>
 				) : (
-					<button className="form-control btn btn-primary" type="submit">{name}</button>
+					<button className="btn btn-info btn-block" type="submit">{name}</button>
 				)
 			}
 			</React.Fragment>

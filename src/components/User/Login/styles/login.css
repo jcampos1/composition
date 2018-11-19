@@ -1,0 +1,6 @@
+.content {
+  background-color: #eee;
+  text-align: center; }
+  .content .content__login_form {
+    top: -140px;
+    max-width: 500px; }
