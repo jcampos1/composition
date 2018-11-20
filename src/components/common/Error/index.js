@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Error extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -11,8 +11,8 @@ class Error extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevProps.errors !== this.props.errors){
-            const {errors} = this.props;
+        if (prevProps.errors !== this.props.errors) {
+            const { errors } = this.props;
 
             let errs = [];
             Object.keys(errors).map(key => {
@@ -27,9 +27,9 @@ class Error extends React.Component {
     }
 
     render() {
-        const {errors} = this.state;
+        const { errors } = this.state;
 
-        if ( errors.length === 0)
+        if (errors.length === 0)
             return null;
 
         return (

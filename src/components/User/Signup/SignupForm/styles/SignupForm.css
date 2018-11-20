@@ -1,0 +1,8 @@
+.signup_form {
+  position: relative;
+  padding-bottom: 100px; }
+  .signup_form.rounded {
+    border-radius: 20px !important; }
+  .signup_form .signup_form__content {
+    position: relative;
+    padding-top: 100px; }

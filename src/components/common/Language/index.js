@@ -3,7 +3,7 @@ import i18n from 'i18n';
 import {saveLanguage} from 'utils/localStorage/index';
 import classNames from 'classnames';
 import { withNamespaces } from 'react-i18next';
-import './styles/language.scss';
+import './styles/language.css';
 
 class Language extends React.Component {
 	constructor (props) {

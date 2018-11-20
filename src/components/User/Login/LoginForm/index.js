@@ -1,55 +1,57 @@
 import React from 'react';
-import { Form, Field } from 'react-final-form'
+import { Form } from 'react-final-form'
 import ButtonForm from 'components/common/ButtonForm/index';
 import Error from 'components/common/Error/index';
 import globalAxios from 'config/api/index';
-import {saveToken} from 'utils/localStorage/index';
-import {Link} from 'react-router-dom';
+import { saveToken } from 'utils/localStorage/index';
+import { Link } from 'react-router-dom';
+import { required } from 'utils/forms/validators/index';
+import { InputField } from 'utils/forms/render/index';
 // the hoc
 import { withNamespaces } from 'react-i18next';
 import './styles/LoginForm.scss';
 
 export class LoginForm extends React.Component {
-	constructor (props) {
-		super(props);
+    constructor(props) {
+        super(props);
 
-		this.state = {
-			isLoading: false,
-			errors: {}
-		};
+        this.state = {
+            isLoading: false,
+            errors: {}
+        };
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-	handleSubmit(data) {
-		this.setState({
-			isLoading: true
-		}, () => {
-			globalAxios.post('/accounts/login/', data)
-			.then(response => {
-				// Save token in local storage
-				saveToken(response.data.key);
-				this.setState({
-					isLoading: false,
-					errors: {}
-				});
-				this.props.setAuthenticated();
-			})
-			.catch(errors => {
-				this.setState({
-					isLoading: false,
-					errors: errors.response.data
-				});
-			});
-		});
-	}
+    handleSubmit(data) {
+        this.setState({
+            isLoading: true
+        }, () => {
+            globalAxios.post('/accounts/login/', data)
+                .then(response => {
+                    // Save token in local storage
+                    saveToken(response.data.key);
+                    this.setState({
+                        isLoading: false,
+                        errors: {}
+                    });
+                    this.props.setAuthenticated();
+                })
+                .catch(errors => {
+                    this.setState({
+                        isLoading: false,
+                        errors: errors.response.data
+                    });
+                });
+        });
+    }
 
-	render () {
-		const {isLoading, errors} = this.state;
-		const {t} = this.props;
+    render() {
+        const { isLoading, errors } = this.state;
+        const { t } = this.props;
 
-		return (
-			<div className="login-form shadow-lg p-5 bg-white rounded">
+        return (
+            <div className="login-form shadow-lg p-5 bg-white rounded">
 				<h2 className="login-form__title mb-5">{t('login_title')}</h2>
 				<Form onSubmit={this.handleSubmit}>
 					{
@@ -58,12 +60,11 @@ export class LoginForm extends React.Component {
 								<Error errors={errors}/>
 								<div className="form-group">
 								  	<div className="input-group">
-										<Field 
-											name="username" 
-											component="input" 
-											type="text" 
+								  		<InputField 
+								  			name={t('username')}
+								  			type="text" 
 											className="form-control" 
-											placeholder={t('login.username_email')} />
+											validate={required} />
 										<span className="input-group-icon" id="exampleIconInput1Help">
 									    	<img className="material-icons" src="/images/ett-username.svg" width="35px" alt="language" />
 									    </span>
@@ -71,12 +72,11 @@ export class LoginForm extends React.Component {
 								</div>
 								<div className="form-group mb-2">
 								  	<div className="input-group">
-										<Field 
-											name="password" 
-											component="input" 
-											type="password" 
+								  		<InputField 
+								  			name={t('password')}
+								  			type="password" 
 											className="form-control" 
-											placeholder={t('password')} />
+											validate={required} />
 										<span className="input-group-icon" id="exampleIconInput1Help">
 									    	<img className="material-icons" src="/images/ett-password.svg" width="35px" alt="language" />
 									    </span>
@@ -86,10 +86,12 @@ export class LoginForm extends React.Component {
 									<div className="login-form__small mb-4">
 										<label>{t('forgot_password')}</label>
 									</div>
-									<ButtonForm 
-										name={t('login.login_btn')} 
-										nameLoading={t('login.login_btn_loading')}
-										isLoading={isLoading}/>
+								</div>
+								<ButtonForm 
+									name={t('login.login_btn')} 
+									nameLoading={t('login.login_btn_loading')}
+									isLoading={isLoading}/>
+								<div className="login-form__tab">
 									<label className="login-form__small mt-3 d-block text-center">{t('without_account')}</label>
 									<Link to="/signup" className="login-form__tab__create_account d-block text-center">{t('create_account')}</Link>
 								</div>
@@ -98,8 +100,8 @@ export class LoginForm extends React.Component {
 					}
 				</Form>
 			</div>
-		);
-	}
+        );
+    }
 }
 
 export default withNamespaces()(LoginForm);

@@ -1,7 +1,7 @@
 import React from 'react';
-import './styles/HeaderUser.css';
 import {Link} from 'react-router-dom';
 import Language from 'components/common/Language/index';
+import './styles/HeaderUser.css';
 
 class HeaderUser extends React.PureComponent {
 	render() {
