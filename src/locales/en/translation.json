@@ -8,10 +8,12 @@
 	"create_account": "Create an account",
 	"name": "Name",
 	"wizard": {
-		"next": "Next",
-		"cancel": "Cancel",
+		"create_user": "Create user",
+		"create_user_loading": "Creating user...",
+		"previous": "Previous",
 		"user_data": "Enter your data",
-		"network_account": "Create network account"
+		"network_account": "Create network account",
+		"network_account_loading": "Creating network account..."
 	},
 	"footer": {
 		"policy": "Privacy policy",

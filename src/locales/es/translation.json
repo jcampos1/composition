@@ -8,10 +8,12 @@
 	"create_account": "Crear una cuenta",
 	"name": "Nombre",
 	"wizard": {
-		"next": "Siguiente",
-		"cancel": "Cancelar",
+		"create_user": "Crear usuario",
+		"create_user_loading": "Creando usuario...",
+		"previous": "Anterior",
 		"user_data": "Ingresa tus datos",
-		"network_account": "Crear cuenta de red"
+		"network_account": "Crear cuenta de red",
+		"network_account_loading": "Creando cuenta de red..."
 	},
 	"footer": {
 		"policy": "Politicas de privacidad",
