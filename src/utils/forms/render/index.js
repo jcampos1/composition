@@ -2,9 +2,9 @@ import React from 'react';
 import {Field} from 'react-final-form';
 import {FieldError} from 'utils/forms/validators/index';
 
-export const InputField = ({name, placeholder, validate, type, className}) =>
+export const InputField = ({name, labelText, placeholder, validate, type, className}) =>
 	<div className="floating-label">
-		<label>{name}</label>
+		<label>{labelText}</label>
 		<Field 
 			name={name}
 			component="input" 

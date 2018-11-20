@@ -61,7 +61,8 @@ export class LoginForm extends React.Component {
 								<div className="form-group">
 								  	<div className="input-group">
 								  		<InputField 
-								  			name={t('username')}
+								  			name="username"
+								  			labelText={t('username')}
 								  			type="text" 
 											className="form-control" 
 											validate={required} />
@@ -73,7 +74,8 @@ export class LoginForm extends React.Component {
 								<div className="form-group mb-2">
 								  	<div className="input-group">
 								  		<InputField 
-								  			name={t('password')}
+								  			name="password"
+								  			labelText={t('password')}
 								  			type="password" 
 											className="form-control" 
 											validate={required} />

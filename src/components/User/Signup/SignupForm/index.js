@@ -6,6 +6,7 @@ import {saveToken} from 'utils/localStorage/index';
 import {FieldError, required} from 'utils/forms/validators/index';
 import Wizard from 'components/User/Signup/SignupForm/components/Wizard/container/index';
 import SignuFormTabsContainer from 'components/User/Signup/SignupForm/components/SignupFormTabs/container/index';
+import { InputField } from 'utils/forms/render/index';
 // the hoc
 import { withNamespaces } from 'react-i18next';
 import './styles/SignupForm.scss';
@@ -23,7 +24,6 @@ export class SignupForm extends React.Component {
 	}
 
 	handleSubmit(data) {
-		console.log(data);
 		this.setState({
 			isLoading: true
 		}, () => {
@@ -60,82 +60,65 @@ export class SignupForm extends React.Component {
 						<Wizard.Page>
 							<div className="row">
 								<div className="col">
-									<label htmlFor="first_name"></label>
-									<Field 
-										name="first_name" 
-										component="input" 
-										type="text" 
-										className="form-control" 
-										placeholder={t('signup.first_name')}
-										validate={required} />
-									<FieldError name="first_name" />
+									<div className="form-group">
+								  		<InputField 
+								  			name="first_name"
+								  			labelText={t('signup.first_name')}
+								  			type="text" 
+											className="form-control" 
+											validate={required} />
+									</div>
 								</div>
 								<div className="col">
-									<label htmlFor="last_name"></label>
-									<Field 
-										name="last_name" 
-										component="input" 
-										type="text" 
-										className="form-control" 
-										placeholder={t('signup.last_name')}
-										validate={required} />
-									<FieldError name="last_name" />
+									<div className="form-group">
+								  		<InputField 
+								  			name="last_name"
+								  			labelText={t('signup.last_name')}
+								  			type="text" 
+											className="form-control" 
+											validate={required} />
+									</div>
 								</div>
 							</div>
-							<div>
-								<label htmlFor="username"></label>
-								<Field 
-									name="username" 
-									component="input" 
-									type="text" 
+							<div className="form-group">
+						  		<InputField 
+						  			name="username"
+						  			labelText={t('username')}
+						  			type="text" 
 									className="form-control" 
-									placeholder={t('username')}
 									validate={required} />
-								<FieldError name="username" />
 							</div>
-							<div>
-								<label htmlFor="email"></label>
-								<Field 
-									name="email" 
-									component="input" 
-									type="email" 
+							<div className="form-group">
+						  		<InputField 
+						  			name="email"
+						  			labelText={t('email')}
+						  			type="email" 
 									className="form-control" 
-									placeholder={t('email')}
 									validate={required} />
-								<FieldError name="email" />
 							</div>
-							<div>
-								<label htmlFor="password1"></label>
-								<Field 
-									name="password1" 
-									component="input" 
-									type="password" 
+							<div className="form-group">
+						  		<InputField 
+						  			name="password1"
+						  			labelText={t('password')}
+						  			type="password" 
 									className="form-control" 
-									placeholder={t('password')}
 									validate={required} />
-								<FieldError name="password1" />
 							</div>
-							<div>
-								<label htmlFor="password2"></label>
-								<Field 
-									name="password2" 
-									component="input" 
-									type="password" 
+							<div className="form-group">
+						  		<InputField 
+						  			name="password2"
+						  			labelText={t('signup.confirm_password')}
+						  			type="password" 
 									className="form-control" 
-									placeholder={t('signup.confirm_password')} 
 									validate={required} />
-								<FieldError name="password2" />
 							</div>
-							<div>
-								<label htmlFor="phone_number"></label>
-								<Field 
-									name="phone_number" 
-									component="input" 
-									type="text" 
+							<div className="form-group">
+						  		<InputField 
+						  			name="phone_number"
+						  			labelText={t('signup.phone_number')}
+						  			type="text" 
 									className="form-control" 
-									placeholder={t('signup.phone_number')}
 									validate={required} />
-								<FieldError name="phone_number" />
 							</div>
 						</Wizard.Page>
 						<Wizard.Page>
