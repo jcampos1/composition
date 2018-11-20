@@ -3,11 +3,11 @@
   margin-right: 12px; }
 
 .language .language__title {
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   margin-right: 12px; }
   .language .language__title label {
-    color: inherit; }
+    color: inherit !important; }
 
 .language .language__options {
   width: 90px;
@@ -17,7 +17,6 @@
   .language .language__options label {
     color: inherit;
     font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
     font-weight: 600; }
     .language .language__options label.language__options__btn-es {
       color: #666;

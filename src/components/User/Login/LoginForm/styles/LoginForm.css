@@ -1,13 +1,11 @@
 .login-form h2.login-form__title {
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  color: #83e2ff; }
+  color: #83e2ff !important; }
 
 .login-form .login-form__tab {
   padding-left: 50px; }
   .login-form .login-form__tab .login-form__tab__create_account {
-    color: #4172d0;
-    font-family: 'Open Sans', sans-serif;
+    color: #4172d0 !important;
     font-weight: 700; }
   .login-form .login-form__tab a:link {
     text-decoration: none; }

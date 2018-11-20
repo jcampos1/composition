@@ -1,11 +1,18 @@
 {
-	"username": "Username or email",
+	"username": "Username",
 	"password": "Password",
 	"email": "Email",
 	"login_title": "Log in",
 	"forgot_password": "Forgot your password",
 	"without_account": "Do not have a 1123 Group account?",
 	"create_account": "Create an account",
+	"name": "Name",
+	"wizard": {
+		"next": "Next",
+		"cancel": "Cancel",
+		"user_data": "Enter your data",
+		"network_account": "Create network account"
+	},
 	"footer": {
 		"policy": "Privacy policy",
 		"terms_and_conditions": "Terms and conditions",
@@ -16,10 +23,13 @@
 		"title": "LANGUAGE"
 	},
 	"login": {
+		"username_email": "Username or email",
 		"login_btn": "Log in",
 		"login_btn_loading": "Logging in"
 	},
 	"signup": {
+		"first_name": "First name",
+		"last_name": "Last name",
 		"confirm_password": "Confirmation password",
 		"phone_number": "Phone number",
 		"signup_btn": "Signup",

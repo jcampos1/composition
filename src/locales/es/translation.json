@@ -1,11 +1,18 @@
 {
-	"username": "Usuario o correo",
+	"username": "Usuario",
 	"password": "Contraseña",
-	"email": "Correo",
+	"email": "Correo electrónico",
 	"login_title": "Ingresar",
 	"forgot_password": "Recuperar contraseña",
 	"without_account": "¿No tienes una cuenta 1123 Group?",
 	"create_account": "Crear una cuenta",
+	"name": "Nombre",
+	"wizard": {
+		"next": "Siguiente",
+		"cancel": "Cancelar",
+		"user_data": "Ingresa tus datos",
+		"network_account": "Crear cuenta de red"
+	},
 	"footer": {
 		"policy": "Politicas de privacidad",
 		"terms_and_conditions": "Términos y condiciones",
@@ -16,10 +23,13 @@
 		"title": "IDIOMA"
 	},
 	"login": {
+		"username_email": "Usuario o correo electrónico",
 		"login_btn": "Ingresar",
 		"login_btn_loading": "Iniciando sesión"
 	},
 	"signup": {
+		"first_name": "Nombres",
+		"last_name": "Apellidos",
 		"confirm_password": "Confirmar contraseña",
 		"phone_number": "Teléfono",
 		"signup_btn": "Registrarse",

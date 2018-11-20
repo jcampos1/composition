@@ -1,0 +1,24 @@
+.signup_content {
+	background-color: #eee;
+	text-align: center;
+	.signup_content_form {
+		text-align: initial;
+		top: -100px;
+		max-width: 540px;
+		margin: auto;
+		.signup_content_form__title {
+		    font-size: 24px;
+			line-height: 24px;
+			color: #fff !important;
+			font-weight: 800;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.signup_content {
+		.signup_content_form {
+			max-width: 350px;
+		}
+	}
+}

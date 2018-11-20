@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  font-family: "Open Sans" !important, sans-serif !important;
+  color: #666 !important; }
+
+button {
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  border-radius: 10px !important;
+  padding: 12px 30px !important;
+  color: #fff !important; }
+  button.btn-primary {
+    background: linear-gradient(to bottom, #8476f4 0%, #6274e2 51%, #4072d0 100%) !important; }
+  button.btn-raised {
+    color: inherit !important; }
+  button.btn {
+    text-transform: capitalize !important; }

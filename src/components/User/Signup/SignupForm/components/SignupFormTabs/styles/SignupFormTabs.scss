@@ -1,0 +1,38 @@
+.signup_form__tabs {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	.signup_form__tabs__number_page {
+		color: #fff !important;
+		font-weight: 700;
+		background-color: #4172d0;
+		width: 30;
+		height: 30;
+		border-radius: 50%;
+		display: inline-block;
+		padding: 5px 10px;
+	}
+
+	label {
+		text-transform: uppercase;
+		color: #4172d0 !important;
+		font-weight: 700;
+	}
+
+	.signup_form__tabs__data {
+		text-align: center;
+		width: 50%;
+		padding: 20px;
+		vertical-align: middle;
+	}
+
+	.signup_form__tabs__data--disabled {
+		.signup_form__tabs__number_page {
+			background-color: #ccc;
+		}
+
+		label {
+			color: #ccc !important;
+		}
+	}
+}

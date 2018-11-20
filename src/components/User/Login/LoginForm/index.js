@@ -58,7 +58,12 @@ export class LoginForm extends React.Component {
 								<Error errors={errors}/>
 								<div className="form-group">
 								  	<div className="input-group">
-										<Field name="username" component="input" type="text" className="form-control" placeholder={t('username')} />
+										<Field 
+											name="username" 
+											component="input" 
+											type="text" 
+											className="form-control" 
+											placeholder={t('login.username_email')} />
 										<span className="input-group-icon" id="exampleIconInput1Help">
 									    	<img className="material-icons" src="/images/ett-username.svg" width="35px" alt="language" />
 									    </span>
@@ -66,7 +71,12 @@ export class LoginForm extends React.Component {
 								</div>
 								<div className="form-group mb-2">
 								  	<div className="input-group">
-										<Field name="password" component="input" type="password" className="form-control" placeholder={t('password')} />
+										<Field 
+											name="password" 
+											component="input" 
+											type="password" 
+											className="form-control" 
+											placeholder={t('password')} />
 										<span className="input-group-icon" id="exampleIconInput1Help">
 									    	<img className="material-icons" src="/images/ett-password.svg" width="35px" alt="language" />
 									    </span>

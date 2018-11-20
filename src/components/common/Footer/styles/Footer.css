@@ -16,3 +16,9 @@
   .footer .footer__copyright {
     padding: 0;
     text-align: center; } }
+
+@media (max-width: 768px) {
+  .footer .footer__terms_and_conditions {
+    padding: 10px; }
+  .footer .footer__copyright {
+    padding: 10px; } }
