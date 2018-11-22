@@ -7,6 +7,8 @@
 	"without_account": "¿No tienes una cuenta 1123 Group?",
 	"create_account": "Crear una cuenta",
 	"name": "Nombre",
+	"yes": "Si",
+	"no": "No",
 	"wizard": {
 		"create_user": "Crear usuario",
 		"create_user_loading": "Creando usuario...",
@@ -35,6 +37,7 @@
 		"confirm_password": "Confirmar contraseña",
 		"phone_number": "Teléfono",
 		"signup_btn": "Registrarse",
-		"signup_btn_loading": "Registrando"
+		"signup_btn_loading": "Registrando",
+		"have_a_sponsor": "¿Tienes patrocinador?"
 	}
 }

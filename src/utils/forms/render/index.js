@@ -14,3 +14,16 @@ export const InputField = ({name, labelText, placeholder, validate, type, classN
 			validate={validate} />
 		<FieldError name={name} />
 	</div>
+
+export const SwitchField = ({id, name, type, className, handleChange}) =>
+	<div className="custom-control custom-switch d-inline-block">
+		<Field 
+			id={id}
+			name={name}
+			component="input" 
+			type={type}
+			className={className}
+			onChange={handleChange} />
+		<span className="custom-control-track"/>
+		<label className="custom-control-label" htmlFor={id}/>
+	</div>

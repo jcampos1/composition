@@ -14,7 +14,7 @@ class SignupFormTabs extends React.Component {
 						<div key={`signup_form__tab${index}`} className={classNames({
 							"signup_form__tabs__data d-inline-block": true,
 							"border-right": (index+1) < tabs.length,
-							"signup_form__tabs__data--disabled": index > page
+							"signup_form__tabs__data--disabled": index < page
 						})}>
 							<div className="signup_form__tabs__number_page mr-2">{index+1}</div>
 							<label>{tab.title}</label>
