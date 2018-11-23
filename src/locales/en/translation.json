@@ -38,6 +38,7 @@
 		"phone_number": "Phone number",
 		"signup_btn": "Signup",
 		"signup_btn_loading": "Registering",
-		"have_a_sponsor": "Do you have a sponsor?"
+		"have_a_sponsor": "Do you have a sponsor?",
+		"create_your_account": "Create your account"
 	}
 }
