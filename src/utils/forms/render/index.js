@@ -10,7 +10,7 @@ export const InputField = ({name, labelText, placeholder, validate, type, classN
 			component="input" 
 			type={type}
 			className={className}
-			placeholder={placeholder ? placeholder : name}
+			placeholder={placeholder ? labelText : name}
 			validate={validate} />
 		<FieldError name={name} />
 	</div>
