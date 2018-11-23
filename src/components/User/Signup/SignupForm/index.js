@@ -15,11 +15,16 @@ export class SignupForm extends React.Component {
 		};
 	}
 
+	handleChangeSponsor = () => 
+		this.setState({
+			haveSponsor: !this.state.haveSponsor
+		});
+
     render() {
         const { t } = this.props;
         const tabs = [{ title: t('wizard.user_data') }, { title: t('wizard.network_account') }];
-
-        console.log(this.state.haveSponsor);
+        const {haveSponsor} = this.state;
+        
         return (
             <div className="signup_form shadow-lg px-5 pb-5 bg-white rounded position-relative">
 				<SignuFormTabsContainer tabs={tabs} />
@@ -81,7 +86,9 @@ export class SignupForm extends React.Component {
 							  		id="sponsor"
 							  		name="sponsor"
 							  		type="checkbox"
-							  		className="custom-control-input" />
+							  		className="custom-control-input"
+							  		handleChange={this.handleChangeSponsor}
+							  		checked={haveSponsor} />
 								<label htmlFor="sponsor">{t('yes')}</label>
 							</div>
 						</Wizard.Page>

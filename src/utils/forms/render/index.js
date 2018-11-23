@@ -15,7 +15,7 @@ export const InputField = ({name, labelText, placeholder, validate, type, classN
 		<FieldError name={name} />
 	</div>
 
-export const SwitchField = ({id, name, type, className, handleChange}) =>
+export const SwitchField = ({id, name, type, checked, className, handleChange}) =>
 	<div className="custom-control custom-switch d-inline-block">
 		<Field 
 			id={id}
@@ -23,7 +23,8 @@ export const SwitchField = ({id, name, type, className, handleChange}) =>
 			component="input" 
 			type={type}
 			className={className}
-			onChange={handleChange} />
+			onChange={handleChange}
+			checked={checked} />
 		<span className="custom-control-track"/>
 		<label className="custom-control-label" htmlFor={id}/>
 	</div>

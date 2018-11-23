@@ -131,6 +131,7 @@ export class Wizard extends React.Component {
         const { page, values, isLoading, errors } = this.state;
         const activePage = React.Children.toArray(children)[page];
         const isLastPage = page === React.Children.count(children) - 1;
+
         return (
             <Form
         initialValues={values}
