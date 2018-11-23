@@ -7,9 +7,9 @@ import { saveToken } from 'utils/localStorage/index';
 import { Link } from 'react-router-dom';
 import { InputField } from 'utils/forms/render/index';
 import { validate } from 'utils/forms/validators/index';
+import validationSchema from 'components/User/Login/LoginForm/schema/index';
 // the hoc
 import { withNamespaces } from 'react-i18next';
-import * as yup from 'yup';
 import './styles/LoginForm.scss';
 
 export class LoginForm extends React.Component {
@@ -23,19 +23,6 @@ export class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    static validationSchema = () => 
-    	yup.object().shape({
-		  username: yup
-		      .string()
-		      .max(255)
-		      .email()
-		      .required(),
-		  password: yup
-		      .string()
-		      .min(8)
-		      .required()
-		});
 
     handleSubmit(data) {
         this.setState({
@@ -69,7 +56,7 @@ export class LoginForm extends React.Component {
 				<h2 className="login-form__title mb-5">{t('login_title')}</h2>
 				<Form 
 					onSubmit={this.handleSubmit} 
-					validate={values => validate(values, LoginForm.validationSchema())}>
+					validate={values => validate(values, validationSchema())}>
 					{
 						({handleSubmit, values, submitting}) => (
 							<form name="login-form" onSubmit={handleSubmit}>

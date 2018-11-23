@@ -1,5 +1,4 @@
 import React from 'react';
-import { required, confirmationPassword, validatePassword } from 'utils/forms/validators/index';
 import Wizard from 'components/User/Signup/SignupForm/components/Wizard/container/index';
 import SignuFormTabsContainer from 'components/User/Signup/SignupForm/components/SignupFormTabs/container/index';
 import { InputField, SwitchField } from 'utils/forms/render/index';
@@ -38,8 +37,7 @@ export class SignupForm extends React.Component {
 								  			name="first_name"
 								  			labelText={t('signup.first_name')}
 								  			type="text" 
-											className="form-control" 
-											validate={required} />
+											className="form-control" />
 									</div>
 								</div>
 								<div className="col">
@@ -48,8 +46,7 @@ export class SignupForm extends React.Component {
 								  			name="last_name"
 								  			labelText={t('signup.last_name')}
 								  			type="text" 
-											className="form-control" 
-											validate={required} />
+											className="form-control"/>
 									</div>
 								</div>
 							</div>
@@ -58,24 +55,21 @@ export class SignupForm extends React.Component {
 						  			name="email"
 						  			labelText={t('email')}
 						  			type="email" 
-									className="form-control" 
-									validate={required} />
+									className="form-control"/>
 							</div>
 							<div className="form-group">
 						  		<InputField 
 						  			name="password1"
 						  			labelText={t('password')}
 						  			type="password" 
-									className="form-control" 
-									validate={validatePassword} />
+									className="form-control" />
 							</div>
 							<div className="form-group">
 						  		<InputField 
 						  			name="password2"
 						  			labelText={t('signup.confirm_password')}
 						  			type="password" 
-									className="form-control" 
-									validate={confirmationPassword} />
+									className="form-control" />
 							</div>
 							<div className="form-group">
 								<label className="pr-3" htmlFor="sponsor">
@@ -98,8 +92,7 @@ export class SignupForm extends React.Component {
 						  			name="name"
 						  			labelText={t('name')}
 						  			type="text" 
-									className="form-control" 
-									validate={required} />
+									className="form-control" />
 							</div>
 						</Wizard.Page>
 					</Wizard>

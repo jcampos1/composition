@@ -9,6 +9,10 @@
 	"name": "Name",
 	"yes": "Yes",
 	"no": "No",
+	"validations": {
+		"required": "This is a required field",
+		"min": "This field must be at least {0} characters"
+	},
 	"wizard": {
 		"create_user": "Create user",
 		"create_user_loading": "Creating user...",
@@ -39,6 +43,9 @@
 		"signup_btn": "Signup",
 		"signup_btn_loading": "Registering",
 		"have_a_sponsor": "Do you have a sponsor?",
-		"create_your_account": "Create your account"
+		"create_your_account": "Create your account",
+		"validations": {
+			"password_dont_match": "Passwords don't match"
+		}
 	}
 }

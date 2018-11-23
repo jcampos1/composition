@@ -4,9 +4,10 @@ import { Form } from 'react-final-form'
 import { withNamespaces } from 'react-i18next';
 import ButtonForm from 'components/common/ButtonForm/index';
 import globalAxios from 'config/api/index';
-import {saveToken} from 'utils/localStorage/index';
+import { saveToken } from 'utils/localStorage/index';
 import Error from 'components/common/Error/index';
-
+import validationSchema from 'components/User/Signup/SignupForm/schema/index'
+import { validate } from 'utils/forms/validators/index';
 export class Wizard extends React.Component {
     static Page = ({ children }) => children;
 
@@ -39,64 +40,49 @@ export class Wizard extends React.Component {
             this.props.changeWizardPage(this.state.page);
         });
 
-    /**
-     * NOTE: Both validate and handleSubmit switching are implemented
-     * here because 🏁 Redux Final Form does not accept changes to those
-     * functions once the form has been defined.
-     */
-
-    validate = values => {
-        const activePage = React.Children.toArray(this.props.children)[
-            this.state.page
-        ];
-        return activePage.props.validate ?
-            activePage.props.validate(values) : {};
-    }
-
     createUser = values => {
-        const {isAuthenticated} = this.props;
+        const { isAuthenticated } = this.props;
+        if (!isAuthenticated) {
+            this.setState({
+                isLoading: true
+            }, () => {
+                const data = {
+                    first_name: values['first_name'],
+                    last_name: values['last_name'],
+                    email: values['email'],
+                    password1: values['password1'],
+                    password2: values['password2'],
+                };
 
-        if(!isAuthenticated){
-          this.setState({
-              isLoading: true
-          }, () => {
-              const data = {
-                first_name: values['first_name'],
-                last_name: values['last_name'],
-                email: values['email'],
-                password1: values['password1'],
-                password2: values['password2'],
-              };
-
-              globalAxios.post('/accounts/signup/', data)
-                  .then(response => {
-                      // Save token in local storage
-                      saveToken(response.data.key);
-                      this.setState({
-                          isLoading: false,
-                          errors: {}
-                      }, () => {
-                        this.next(values);
-                      });
-                      this.props.setAuthenticated();
-                  })
-                  .catch(errors => {
-                      this.setState({
-                          isLoading: false,
-                          errors: errors.response.data
-                      });
-                  });
-          });
+                globalAxios.post('/accounts/signup/', data)
+                    .then(response => {
+                        // Save token in local storage
+                        saveToken(response.data.key);
+                        this.setState({
+                            isLoading: false,
+                            errors: {}
+                        }, () => {
+                            this.next(values);
+                        });
+                        this.props.setAuthenticated();
+                    })
+                    .catch(errors => {
+                        this.setState({
+                            isLoading: false,
+                            errors: errors.response.data
+                        });
+                    });
+            });
         } else
-          this.next(values);
+            this.next(values);
     }
 
     createGlobalAccount = values => {
-      this.setState({
+        this.setState({
             isLoading: true
         }, () => {
             const data = {
-              name: values['name']
+                name: values['name']
             };
 
             globalAxios.post('/account-global/', data)
@@ -135,7 +121,7 @@ export class Wizard extends React.Component {
         return (
             <Form
         initialValues={values}
-        validate={this.validate}
+        validate={values => validate(values, validationSchema())}
         onSubmit={this.handleSubmit}>
         {({ handleSubmit, submitting, values }) => (
           <form onSubmit={handleSubmit}>

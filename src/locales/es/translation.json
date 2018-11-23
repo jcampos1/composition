@@ -9,6 +9,10 @@
 	"name": "Nombre",
 	"yes": "Si",
 	"no": "No",
+	"validations": {
+		"required": "Este campo es requerido",
+		"min": "Esta campo debe ser de al menos {0} caracteres"
+	},
 	"wizard": {
 		"create_user": "Crear usuario",
 		"create_user_loading": "Creando usuario...",
@@ -39,6 +43,9 @@
 		"signup_btn": "Registrarse",
 		"signup_btn_loading": "Registrando",
 		"have_a_sponsor": "¿Tienes patrocinador?",
-		"create_your_account": "Cree su cuenta"
+		"create_your_account": "Cree su cuenta",
+		"validations": {
+			"password_dont_match": "Las contraseñas no coinciden"
+		}
 	}
 }
