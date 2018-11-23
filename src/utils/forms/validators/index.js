@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field } from 'react-final-form';
+import { setIn } from 'final-form';
 
 export const required = value => (value ? undefined : 'Required');
 
@@ -30,3 +31,17 @@ export const FieldError = ({ name }) => (
     }
   />
 );
+
+export const validate = async (values, schema) => {
+  if (typeof schema === 'function') {
+    schema = schema();
+  }
+
+  try {
+    await schema.validate(values, { abortEarly: false });
+  } catch (e) {
+    return e.inner.reduce((errors, error) => {
+      return setIn(errors, error.path, error.message);
+    }, {});
+  }
+}

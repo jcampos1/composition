@@ -5,10 +5,11 @@ import Error from 'components/common/Error/index';
 import globalAxios from 'config/api/index';
 import { saveToken } from 'utils/localStorage/index';
 import { Link } from 'react-router-dom';
-import { required } from 'utils/forms/validators/index';
 import { InputField } from 'utils/forms/render/index';
+import { validate } from 'utils/forms/validators/index';
 // the hoc
 import { withNamespaces } from 'react-i18next';
+import * as yup from 'yup';
 import './styles/LoginForm.scss';
 
 export class LoginForm extends React.Component {
@@ -22,6 +23,19 @@ export class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    static validationSchema = () => 
+    	yup.object().shape({
+		  username: yup
+		      .string()
+		      .max(255)
+		      .email()
+		      .required(),
+		  password: yup
+		      .string()
+		      .min(8)
+		      .required()
+		});
 
     handleSubmit(data) {
         this.setState({
@@ -53,7 +67,9 @@ export class LoginForm extends React.Component {
         return (
             <div className="login-form shadow-lg p-5 bg-white rounded">
 				<h2 className="login-form__title mb-5">{t('login_title')}</h2>
-				<Form onSubmit={this.handleSubmit}>
+				<Form 
+					onSubmit={this.handleSubmit} 
+					validate={values => validate(values, LoginForm.validationSchema())}>
 					{
 						({handleSubmit, values, submitting}) => (
 							<form name="login-form" onSubmit={handleSubmit}>
@@ -64,8 +80,7 @@ export class LoginForm extends React.Component {
 								  			name="username"
 								  			labelText={t('username')}
 								  			type="text" 
-											className="form-control" 
-											validate={required} />
+											className="form-control"/>
 										<span className="input-group-icon" id="exampleIconInput1Help">
 									    	<img className="material-icons" src="/images/ett-username.svg" width="35px" alt="language" />
 									    </span>
@@ -77,8 +92,7 @@ export class LoginForm extends React.Component {
 								  			name="password"
 								  			labelText={t('password')}
 								  			type="password" 
-											className="form-control" 
-											validate={required} />
+											className="form-control"/>
 										<span className="input-group-icon" id="exampleIconInput1Help">
 									    	<img className="material-icons" src="/images/ett-password.svg" width="35px" alt="language" />
 									    </span>
