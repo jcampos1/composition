@@ -24,7 +24,7 @@ export class SignupForm extends React.Component {
         const { t } = this.props;
         const tabs = [{ title: t('wizard.user_data') }, { title: t('wizard.network_account') }];
         const {haveSponsor} = this.state;
-        
+
         return (
             <div className="signup_form shadow-lg px-5 pb-5 bg-white rounded position-relative">
 				<SignuFormTabsContainer tabs={tabs} />
@@ -79,7 +79,7 @@ export class SignupForm extends React.Component {
 							</div>
 							<div className="form-group">
 								<label className="pr-3" htmlFor="sponsor">
-							  		{t('signup.have_a_sponsor')}
+							  		<b>{t('signup.have_a_sponsor')}</b>
 							  	</label>
 							  	<label className="pr-3" htmlFor="sponsor">{t('no')}</label>
 							  	<SwitchField 

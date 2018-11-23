@@ -14,7 +14,6 @@ const globalAxios = axios.create({
 // Add a request interceptor
 globalAxios.interceptors.request.use(config => {
     // Do something before request is sent
-    console.log(config);
     const token = getToken();
     if (token)
         config.headers["Authorization"] = `Token ${token}`;
