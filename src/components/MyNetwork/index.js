@@ -3,10 +3,6 @@ import globalAxios from 'config/api/index';
 import AccountNetwork from 'components/MyNetwork/components/AccountNetwork/index';
 
 class MyNetwork extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         globalAxios.get('/account-global/account_global_in_use/')
             .then(response => {
