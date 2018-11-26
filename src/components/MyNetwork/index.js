@@ -15,6 +15,9 @@ class MyNetwork extends React.Component {
 
     render() {
     	const {accountGlobalInUse} = this.props;
+    	if (accountGlobalInUse === null)
+    		return <div>LOADING ...</div>
+    	
         return (<h1>My Network Component</h1>)
     }
 }
