@@ -8,6 +8,8 @@ import { saveToken } from 'utils/localStorage/index';
 import Error from 'components/common/Error/index';
 import validationSchema from 'components/User/Signup/SignupForm/schema/index'
 import { validate } from 'utils/forms/validators/index';
+import { withRouter } from 'react-router'
+
 export class Wizard extends React.Component {
     static Page = ({ children }) => children;
 
@@ -87,11 +89,10 @@ export class Wizard extends React.Component {
 
             globalAxios.post('/account-global/', data)
                 .then(response => {
-                    alert("Account global created. Redirect?");
                     this.setState({
                         isLoading: false,
                         errors: {}
-                    });
+                    }, () => this.props.history.push("/my-network"));
                 })
                 .catch(errors => {
                     this.setState({
@@ -168,4 +169,4 @@ Wizard.propTypes = {
     onSubmit: PropTypes.func.isRequired
 }
 
-export default withNamespaces()(Wizard);
+export default withRouter(withNamespaces()(Wizard));

@@ -18,6 +18,3 @@ button {
 
 label b {
   font-weight: 900; }
-
-.custom-control-label::before {
-  background-color: red !important; }
