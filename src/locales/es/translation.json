@@ -47,5 +47,12 @@
 		"validations": {
 			"password_dont_match": "Las contraseñas no coinciden"
 		}
+	},
+	"my_network": {
+		"children_zero_share": "Comparte el siguiente link con las personas que quieres agregar a tu red.",
+		"children_share": "Comparte el código con mas personas e incrementa la comunidad de tu red",
+		"share_code": "Compartir código",
+		"community": "Comunidad",
+		"level": "Nivel"
 	}
 }

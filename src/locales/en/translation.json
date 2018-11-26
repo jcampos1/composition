@@ -9,6 +9,7 @@
 	"name": "Name",
 	"yes": "Yes",
 	"no": "No",
+	"loading": "Loading...",
 	"validations": {
 		"required": "This is a required field",
 		"min": "This field must be at least {0} characters"
@@ -47,5 +48,12 @@
 		"validations": {
 			"password_dont_match": "Passwords don't match"
 		}
+	},
+	"my_network": {
+		"children_zero_share": "Share the following link with the people you want to add to your network",
+		"children_share": "Share the code with more people and increase the community of your network",
+		"share_code": "Share Code",
+		"community": "Community",
+		"level": "Level"
 	}
 }

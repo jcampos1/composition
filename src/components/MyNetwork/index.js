@@ -1,6 +1,7 @@
 import React from 'react';
 import globalAxios from 'config/api/index';
 import AccountNetwork from 'components/MyNetwork/components/AccountNetwork/index';
+import { withNamespaces } from 'react-i18next';
 
 class MyNetwork extends React.Component {
     componentDidMount() {
@@ -11,16 +12,16 @@ class MyNetwork extends React.Component {
     }
 
     render() {
-        const { accountGlobalInUse } = this.props;
+        const { accountGlobalInUse, t } = this.props;
 
         if (accountGlobalInUse === null)
-            return <div>LOADING ...</div>
+            return <div className="text-uppercase">{t('loading')}</div>
 
-        if (accountGlobalInUse.children.length === 0)
+        if (accountGlobalInUse.parent === null || accountGlobalInUse.children.length === 0)
             return (
                 <div className="container">
     				<label className="d-block">
-    					Comparte el siguiente link con las personas que quieres agregar a tu red.
+    					{t('my_network.children_zero_share')}
     				</label>
     				<div className="input-group mb-3">
 					  <input 
@@ -33,7 +34,7 @@ class MyNetwork extends React.Component {
 						    <span className="input-group-text" id="basic-addon1">Edit</span>
 						</div>
 					</div>
-					<button className="btn btn-primary btn-lg d-block m-auto">Compartir código</button>
+					<button className="btn btn-primary btn-lg d-block m-auto">{t('my_network.share_code')}</button>
     			</div>
             )
 
@@ -42,16 +43,16 @@ class MyNetwork extends React.Component {
         		<div className="row p-3 border-bottom">
         			<div className="col-sm-8">
 	        			<label className="d-block">
-	    					Comparte el código con mas personas e incrementa la comunidad de tu red
+	    					{t('my_network.children_share')}
 	    				</label>
 	    			</div>
 	    			<div className="col-sm">
-	    				<button className="btn btn-primary btn-lg d-block m-auto">Compartir código</button>
+	    				<button className="btn btn-primary btn-lg d-block m-auto">{t('my_network.share_code')}</button>
 	    			</div>
         		</div>
         		<div className="row p-3 align-middle">
-                	<div className="col-sm-4">
-                		COMMUNITY
+                	<div className="col-sm-4 text-uppercase">
+                		{t('my_network.community')}
                 	</div>
                 	<div className="col-sm">
                 		PP
@@ -59,8 +60,8 @@ class MyNetwork extends React.Component {
                 	<div className="col-sm">
                 		PG
                 	</div>
-                	<div className="col-sm">
-                		LEVEL
+                	<div className="col-sm text-uppercase">
+                		{t('my_network.level')}
                 	</div>
                 	<div className="col-sm">
                 	</div>
@@ -77,4 +78,4 @@ class MyNetwork extends React.Component {
     }
 }
 
-export default MyNetwork;
+export default withNamespaces()(MyNetwork);
