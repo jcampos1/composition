@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 import PropTypes from 'prop-types';
 import LoginContainer from 'components/User/Login/container/index';
 import SignupContainer from 'components/User/Signup/container/index';
-import MyNetwork from 'components/MyNetwork/index';
+import MyNetworkContainer from 'components/MyNetwork/container/index';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 class Root extends React.PureComponent {
@@ -17,7 +17,7 @@ class Root extends React.PureComponent {
 						<Route exact path="/" component={() => <Redirect to="/login"/>}/>
 						<Route exact path="/login" component={LoginContainer}/>
 						<Route exact path="/signup" component={SignupContainer}/>
-						<Route exact path="/my-network" component={MyNetwork}/>
+						<Route exact path="/my-network" component={MyNetworkContainer}/>
 					</React.Fragment>
 				</Router>
 			</Provider>
