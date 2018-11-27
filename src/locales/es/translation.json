@@ -48,6 +48,13 @@
 			"password_dont_match": "Las contraseñas no coinciden"
 		}
 	},
+	"password_change": {
+		"title": "Cambiar Contraseña",
+		"new_password": "Contraseña nueva",
+		"confirm_password": "Confirmar contraseña",
+		"save_password": "Guardar Contraseña",
+		"saving_password": "Guardando Contraseña..."
+	},
 	"my_network": {
 		"children_zero_share": "Comparte el siguiente link con las personas que quieres agregar a tu red.",
 		"children_share": "Comparte el código con mas personas e incrementa la comunidad de tu red",

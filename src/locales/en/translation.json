@@ -49,6 +49,13 @@
 			"password_dont_match": "Passwords don't match"
 		}
 	},
+	"password_change": {
+		"title": "Change Password",
+		"new_password": "New password",
+		"confirm_password": "Confirm password",
+		"save_password": "Save Password",
+		"saving_password": "Saving Password..."
+	},
 	"my_network": {
 		"children_zero_share": "Share the following link with the people you want to add to your network",
 		"children_share": "Share the code with more people and increase the community of your network",
