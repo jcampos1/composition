@@ -33,10 +33,11 @@ class AccountNetwork extends React.Component {
 
     render() {
         const { accountGlobal, showChildren } = this.state;
+        const { level } = this.props;
 
         return (
             <React.Fragment>
-                <div className="row border">
+                <div className={`row border`}>
                     <div className="col-sm-4">
                         <img 
                             src="https://via.placeholder.com/60" 
@@ -69,7 +70,8 @@ class AccountNetwork extends React.Component {
                     showChildren && accountGlobal.children && accountGlobal.children.map((child, index) => 
                         <AccountNetwork
                             key={`child${child.id}`} 
-                            accountGlobal={child}/>
+                            accountGlobal={child} 
+                            level={level+1}/>
                     )
                 }
             </React.Fragment>
@@ -77,8 +79,13 @@ class AccountNetwork extends React.Component {
     }
 }
 
+AccountNetwork.defaultProps = {
+    level: 1
+}
+
 AccountNetwork.propTypes = {
-    accountGlobal: PropTypes.object.isRequired
+    accountGlobal: PropTypes.object.isRequired,
+    level: PropTypes.number
 }
 
 export default AccountNetwork;

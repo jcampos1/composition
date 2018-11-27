@@ -50,7 +50,7 @@ class MyNetwork extends React.Component {
 	    				<button className="btn btn-primary btn-lg d-block m-auto">{t('my_network.share_code')}</button>
 	    			</div>
         		</div>
-        		<div className="row p-3 align-middle">
+        		<div className="row p-3">
                 	<div className="col-sm-4 text-uppercase">
                 		{t('my_network.community')}
                 	</div>
