@@ -23,4 +23,16 @@ globalAxios.interceptors.request.use(config => {
     return Promise.reject(error);
 });
 
+globalAxios.interceptors.response.use( response => {
+    // Do something with response data
+    return response;
+  }, error => {
+    // Do something with response error
+    if(error.response.status === 403 || error.response.status === 401)
+        window.location.href = '/login';
+
+    // Trow errr again (may be need for some other catch)
+    return Promise.reject(error);
+});
+
 export default globalAxios;

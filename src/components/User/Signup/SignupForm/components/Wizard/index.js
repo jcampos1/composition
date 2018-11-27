@@ -8,7 +8,7 @@ import { saveToken } from 'utils/localStorage/index';
 import Error from 'components/common/Error/index';
 import validationSchema from 'components/User/Signup/SignupForm/schema/index'
 import { validate } from 'utils/forms/validators/index';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 export class Wizard extends React.Component {
     static Page = ({ children }) => children;
