@@ -16,6 +16,7 @@
     "local-storage": "^1.4.2",
     "nock": "^10.0.2",
     "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-final-form": "^3.6.7",
