@@ -5,6 +5,7 @@ import LoginContainer from 'components/User/Login/container/index';
 import SignupContainer from 'components/User/Signup/container/index';
 import PasswordChangeForm from 'components/User/PasswordChange/components/PasswordChangeForm/index';
 import MyNetworkContainer from 'components/MyNetwork/container/index';
+import ManageAccountForm from 'components/MyNetwork/components/ManageAccount/components/AdminAccountForm/index';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 class Root extends React.PureComponent {
@@ -19,6 +20,7 @@ class Root extends React.PureComponent {
 						<Route exact path="/login" component={LoginContainer}/>
 						<Route exact path="/signup" component={SignupContainer}/>
 						<Route exact path="/my-network" component={MyNetworkContainer}/>
+						<Route exact path="/my-network/admin-account" component={ManageAccountForm}/>
 						<Route exact path="/profile/password-change" component={PasswordChangeForm}/>
 					</React.Fragment>
 				</Router>

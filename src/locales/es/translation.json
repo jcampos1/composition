@@ -60,6 +60,15 @@
 		"children_share": "Comparte el código con mas personas e incrementa la comunidad de tu red",
 		"share_code": "Compartir código",
 		"community": "Comunidad",
-		"level": "Nivel"
+		"level": "Nivel",
+		"admin_account": {
+			"add_user": "Agregar Usuario",
+			"add_user_loading": "Agregando Usuario...",
+			"rol_to_user": "Asignar rol al usuario",
+			"owner": "Titular",
+			"co_owner": "Co Titular",
+			"beneficiary": "Beneficiario",
+			"customer": "Cliente"
+		}
 	}
 }

@@ -28,3 +28,20 @@ export const SwitchField = ({id, name, type, checked, className, handleChange}) 
 		<span className="custom-control-track"/>
 		<label className="custom-control-label" htmlFor={id}/>
 	</div>
+
+export const RadioField = ({id, name, value, checked, labelText, validate, className}) =>
+	<React.Fragment>
+		<Field
+			id={id} 
+			name={name}
+			component="input"
+			value={value}
+			checked={checked}
+			type="radio"
+			className={className}
+			validate={validate} />
+		<label className="form-check-label" htmlFor={id}>
+        	{labelText}
+        </label>
+		<FieldError name={name} />
+	</React.Fragment>

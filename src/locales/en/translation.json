@@ -61,6 +61,16 @@
 		"children_share": "Share the code with more people and increase the community of your network",
 		"share_code": "Share Code",
 		"community": "Community",
-		"level": "Level"
+		"level": "Level",
+		"admin_account": {
+			"add_user": "Add user",
+			"add_user_loading": "Adding user...",
+			"rol_to_user": "Assign rol to user",
+			"owner": "Owner",
+			"co_owner": "Co owner",
+			"beneficiary": "Beneficiary",
+			"customer": "Customer",
+			"description": "An administrator can make deposits, add new accounts, view statistics and edit account information 1123 Global"
+		}
 	}
 }
