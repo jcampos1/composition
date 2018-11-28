@@ -44,6 +44,7 @@ export class Wizard extends React.Component {
 
     createUser = values => {
         const { isAuthenticated } = this.props;
+
         if (!isAuthenticated) {
             this.setState({
                 isLoading: true
