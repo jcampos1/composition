@@ -21,7 +21,9 @@
 		"previous": "Anterior",
 		"user_data": "Ingresa tus datos",
 		"network_account": "Crear cuenta de red",
-		"network_account_loading": "Creando cuenta de red..."
+		"network_account_loading": "Creando cuenta de red...",
+		"finish": "Finalizar",
+		"finish_loading": "Finalizando..."
 	},
 	"footer": {
 		"policy": "Politicas de privacidad",
@@ -78,5 +80,10 @@
 		"accept": "Aceptar Invitación",
 		"description": "Ha sido invitado a la cuenta '{0}' como '{1}'",
 		"description_success": "¡Ha sido asociado!"
+	},
+	"account": {
+		"invitation_code": "Código de invitación",
+		"account_does_not_exist_description": "Cuenta proporcionada no existe. Ingrese código de invitación",
+		"to_join_description": "Ha sido invitado a unirse a la red de la cuenta '{0}'"
 	}
 }

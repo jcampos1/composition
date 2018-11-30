@@ -162,8 +162,8 @@ export class Wizard extends React.Component {
                   isLastPage && (
                     <div className="col">
                       <ButtonForm 
-                        name={t('wizard.network_account')} 
-                        nameLoading={t('wizard.network_account_loading')}/>
+                        name={values['name'] ? t('wizard.network_account') : t('wizard.finish')} 
+                        nameLoading={values['name'] ? t('wizard.network_account_loading') : t('wizard.finish_loading')}/>
                     </div>
                   )
                 }

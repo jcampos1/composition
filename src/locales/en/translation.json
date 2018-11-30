@@ -21,7 +21,9 @@
 		"previous": "Previous",
 		"user_data": "Enter your data",
 		"network_account": "Create network account",
-		"network_account_loading": "Creating network account..."
+		"network_account_loading": "Creating network account...",
+		"finish": "Finish",
+		"finish_loading": "Ending..."
 	},
 	"footer": {
 		"policy": "Privacy policy",
@@ -78,5 +80,10 @@
 		"accept": "Accept Invitation",
 		"description": "Has been invited to account '{0}' as '{1}'",
 		"description_success": "Has been associated!"
+	},
+	"account": {
+		"invitation_code": "Invitation code",
+		"account_does_not_exist_description": "Account provided does not exist. Enter invitation code",
+		"to_join_description": "has been invited to join the '{0}' account network"
 	}
 }
