@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { getToken } from 'utils/localStorage/index';
 import {REDIRECT_PARAMETER} from 'constants/index';
+import {getNextPage} from 'utils/index';
 
 let headers = {
     'Content-Type': 'application/json'
@@ -30,7 +31,7 @@ globalAxios.interceptors.response.use( response => {
   }, error => {
     // Do something with response error
     if(error.response.status === 403 || error.response.status === 401)
-        window.location.href = `/login?${REDIRECT_PARAMETER}=${window.location.pathname}`;
+        window.location.href = `/login?${REDIRECT_PARAMETER}=${getNextPage()}`;
 
     // Trow errr again (may be need for some other catch)
     return Promise.reject(error);

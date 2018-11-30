@@ -10,6 +10,7 @@
 	"yes": "Yes",
 	"no": "No",
 	"loading": "Loading...",
+	"not_found": "Not found.",
 	"validations": {
 		"required": "This is a required field",
 		"min": "This field must be at least {0} characters"
@@ -72,5 +73,10 @@
 			"customer": "Customer",
 			"description": "An administrator can make deposits, add new accounts, view statistics and edit account information 1123 Global"
 		}
+	},
+	"invitation": {
+		"accept": "Accept Invitation",
+		"description": "Has been invited to account '{0}' as '{1}'",
+		"description_success": "Has been associated!"
 	}
 }

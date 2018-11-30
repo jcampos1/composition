@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { InputField } from 'utils/forms/render/index';
 import { validate } from 'utils/forms/validators/index';
 import validationSchema from 'components/User/Login/LoginForm/schema/index';
+import { withRouter } from 'react-router';
 // the hoc
 import { withNamespaces } from 'react-i18next';
 import './styles/LoginForm.scss';
@@ -49,7 +50,7 @@ export class LoginForm extends React.Component {
 
     render() {
         const { isLoading, errors } = this.state;
-        const { t } = this.props;
+        const { t, location } = this.props;
 
         return (
             <div className="login-form shadow-lg p-5 bg-white rounded">
@@ -96,7 +97,14 @@ export class LoginForm extends React.Component {
 									isLoading={isLoading}/>
 								<div className="login-form__tab">
 									<label className="login-form__small mt-3 d-block text-center">{t('without_account')}</label>
-									<Link to="/signup" className="login-form__tab__create_account d-block text-center">{t('create_account')}</Link>
+									<Link 
+										to={{
+											pathname: "/signup",
+											search: location.search
+										}} 
+										className="login-form__tab__create_account d-block text-center">
+										{t('create_account')}
+									</Link>
 								</div>
 							</form>
 						)
@@ -107,4 +115,4 @@ export class LoginForm extends React.Component {
     }
 }
 
-export default withNamespaces()(LoginForm);
+export default withRouter(withNamespaces()(LoginForm));

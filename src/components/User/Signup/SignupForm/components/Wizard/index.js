@@ -8,6 +8,8 @@ import { saveToken } from 'utils/localStorage/index';
 import Error from 'components/common/Error/index';
 import validationSchema from 'components/User/Signup/SignupForm/schema/index'
 import { validate } from 'utils/forms/validators/index';
+import { REDIRECT_PARAMETER } from 'constants/index';
+import { getRedirectUrl, getParseQueryParams } from 'utils/index';
 import { withRouter } from 'react-router';
 
 export class Wizard extends React.Component {
@@ -81,28 +83,36 @@ export class Wizard extends React.Component {
     }
 
     createGlobalAccount = values => {
-        this.setState({
-            isLoading: true
-        }, () => {
-            const data = {
-                name: values['name']
-            };
+        if (values['name'])
+            this.setState({
+                isLoading: true
+            }, () => {
+                const data = {
+                    name: values['name']
+                };
 
-            globalAxios.post('/account-global/', data)
-                .then(response => {
-                    this.setState({
-                        isLoading: false,
-                        errors: {}
-                    }, () => this.props.history.push("/my-network"));
-                })
-                .catch(errors => {
-                    this.setState({
-                        isLoading: false,
-                        errors: errors.response.data
+                globalAxios.post('/account-global/', data)
+                    .then(response => {
+                        this.setState({
+                            isLoading: false,
+                            errors: {}
+                        }, () => this.props.history.push(this.getUrlToRedirect()))
+                    })
+                    .catch(errors => {
+                        this.setState({
+                            isLoading: false,
+                            errors: errors.response.data
+                        });
                     });
-                });
-        });
+            });
+        else
+            this.props.history.push(this.getUrlToRedirect());
     }
+
+    getUrlToRedirect = () =>
+        getParseQueryParams()[REDIRECT_PARAMETER] ?
+        getRedirectUrl() :
+        "/my-network"
 
     handleSubmit = values => {
         const { children } = this.props;
