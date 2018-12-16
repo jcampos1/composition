@@ -1,33 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Error extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            errors: []
-        };
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.errors !== this.props.errors) {
-            const { errors } = this.props;
-
-            let errs = [];
-            Object.keys(errors).map(key => {
-                errs.push(errors[key]);
-                return key;
-            });
-
-            this.setState({
-                errors: errs
-            });
-        }
-    }
+class Error extends React.PureComponent {
 
     render() {
-        const { errors } = this.state;
+        const { errors } = this.props;
 
         if (errors.length === 0)
             return null;
@@ -45,7 +22,7 @@ class Error extends React.Component {
 }
 
 Error.propTypes = {
-    errors: PropTypes.object.isRequired
+    errors: PropTypes.array.isRequired
 }
 
 export default Error;

@@ -1,105 +1,124 @@
 import React from 'react';
-import Wizard from 'components/User/Signup/SignupForm/components/Wizard/container/index';
-import SignuFormTabsContainer from 'components/User/Signup/SignupForm/components/SignupFormTabs/container/index';
-import { InputField, SwitchField } from 'utils/forms/render/index';
 // the hoc
 import { withNamespaces } from 'react-i18next';
-import './styles/SignupForm.scss';
+import {Field, reduxForm} from 'redux-form';
+import ButtonForm from 'components/common/ButtonForm/index';
+import Error from 'components/common/Error/index';
+import { Link } from 'react-router-dom';
+import { RenderInput } from 'utils/forms/render/index';
+import { withRouter } from 'react-router';
+import { required, email, length, confirmation } from 'redux-form-validators';
+import format from 'string-format';
 
-export class SignupForm extends React.Component {
-	constructor( props ) {
-		super(props);
-		this.state = {
-			haveSponsor: false
-		};
-	}
-
-	handleChangeSponsor = () => 
-		this.setState({
-			haveSponsor: !this.state.haveSponsor
-		});
+export class SignupForm extends React.PureComponent {
 
     render() {
-        const { t } = this.props;
-        const tabs = [{ title: t('wizard.user_data') }, { title: t('wizard.network_account') }];
-        const {haveSponsor} = this.state;
+        const { t, location, handleSubmit, isLoading, errors, isCreated } = this.props;
 
         return (
-            <div className="signup_form shadow-lg px-5 pb-5 bg-white rounded position-relative">
-				<SignuFormTabsContainer tabs={tabs} />
-				<div className="signup_form__content">
-					<Wizard onSubmit={() => null}>
-						<Wizard.Page>
-							<div className="row">
-								<div className="col">
-									<div className="form-group">
-								  		<InputField 
-								  			name="first_name"
-								  			labelText={t('signup.first_name')}
-								  			type="text" 
-											className="form-control" />
-									</div>
-								</div>
-								<div className="col">
-									<div className="form-group">
-								  		<InputField 
-								  			name="last_name"
-								  			labelText={t('signup.last_name')}
-								  			type="text" 
-											className="form-control"/>
-									</div>
-								</div>
-							</div>
-							<div className="form-group">
-						  		<InputField 
-						  			name="email"
-						  			labelText={t('email')}
-						  			type="email" 
-									className="form-control"/>
-							</div>
-							<div className="form-group">
-						  		<InputField 
-						  			name="password1"
-						  			labelText={t('password')}
-						  			type="password" 
-									className="form-control" />
-							</div>
-							<div className="form-group">
-						  		<InputField 
-						  			name="password2"
-						  			labelText={t('signup.confirm_password')}
-						  			type="password" 
-									className="form-control" />
-							</div>
-							<div className="form-group">
-								<label className="pr-3" htmlFor="sponsor">
-							  		<b>{t('signup.have_a_sponsor')}</b>
-							  	</label>
-							  	<label className="pr-3" htmlFor="sponsor">{t('no')}</label>
-							  	<SwitchField 
-							  		id="sponsor"
-							  		name="sponsor"
-							  		type="checkbox"
-							  		className="custom-control-input"
-							  		handleChange={this.handleChangeSponsor}
-							  		checked={haveSponsor} />
-								<label htmlFor="sponsor">{t('yes')}</label>
-							</div>
-						</Wizard.Page>
-						<Wizard.Page>
-							<div className="form-group">
-						  		<InputField 
-						  			name="name"
-						  			labelText={t('name')}
-						  			type="text" 
-									className="form-control" />
-							</div>
-						</Wizard.Page>
-					</Wizard>
-				</div>
+        	<div className="user-form shadow-lg p-5 bg-white rounded">
+				<h2 className="user-form__title mb-4">{t('create_account')}</h2>
+				{
+					isCreated && (
+						<div className="alert alert-primary" role="alert">
+							Operación realizada exitosamente.&nbsp; 
+							<Link 
+								to={{
+									pathname: "/login",
+									search: location.search
+								}} 
+								className="user-form__tab__create_account">
+								<b>{t('login.login_btn')}</b>
+							</Link>
+						</div>
+					)
+				}
+				<form name="user-form" onSubmit={handleSubmit}>
+					<Error errors={errors}/>
+					<div className="form-group mb-2">
+				        <Field
+				          	name="first_name"
+				          	type="text"
+				          	img="/images/ett-username.svg"
+				          	component={RenderInput}
+				          	placeholder={t('signup.first_name')}
+				          	className="form-control"
+				          	validate={[required({message: t('validations.required')})]}
+				        />
+					</div>
+					<div className="form-group mb-2">
+				        <Field
+				          	name="last_name"
+				          	type="text"
+				          	img="/images/ett-username.svg"
+				          	component={RenderInput}
+				          	placeholder={t('signup.last_name')}
+				          	className="form-control"
+				          	validate={[required({message: t('validations.required')})]}
+				        />
+					</div>
+					<div className="form-group mb-2">
+				        <Field
+				          	name="email"
+				          	type="email"
+				          	img="/images/ett-username.svg"
+				          	component={RenderInput}
+				          	placeholder={t('email')}
+				          	className="form-control"
+				          	validate={[required({message: t('validations.required')}), email()]}
+				        />
+					</div>
+					<div className="form-group mb-2">
+				        <Field
+				          	name="password"
+				          	img="/images/ett-password.svg"
+				          	type="password"
+				          	component={RenderInput}
+				          	placeholder={t('password')}
+				          	className="form-control"
+				          	validate={[required(), length({min: 6, message: format(t('validations.min'), '6')})]}
+				        />
+					</div>
+					<div className="form-group mb-2">
+				        <Field
+				          	name="confirm_password"
+				          	img="/images/ett-password.svg"
+				          	type="password"
+				          	component={RenderInput}
+				          	placeholder={t('signup.confirm_password')}
+				          	className="form-control"
+				          	validate={[
+				          		required(), 
+				          		length({min: 6, message: format(t('validations.min'), '6')}),
+				          		confirmation({ field: 'password', message: t('signup.validations.password_dont_match')})
+				          	]}
+				        />
+					</div>
+					<ButtonForm 
+						name={t('signup.signup_btn')} 
+						nameLoading={t('signup.signup_btn_loading')}
+						isLoading={isLoading}/>
+					<div className="user-form__tab">
+						<label className="user-form__small mt-3 d-block text-center">
+							{t('signup.have_account')}
+						</label>
+						<Link 
+							to={{
+								pathname: "/login",
+								search: location.search
+							}} 
+							className="user-form__tab__create_account d-block text-center">
+							{t('login.login_btn')}
+						</Link>
+					</div>
+				</form>
 			</div>
         );
     }
 }
 
-export default withNamespaces()(SignupForm);
+const SignupReduxForm = reduxForm ({
+  	form: 'signupForm'
+}) (SignupForm);
+
+export default withRouter(withNamespaces()(SignupReduxForm));

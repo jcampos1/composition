@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`LoginForm component Should render LoginForm component when there are errors 1`] = `
-<ReactFinalForm
-  onSubmit={[Function]}
->
-  <Component />
-</ReactFinalForm>
-`;

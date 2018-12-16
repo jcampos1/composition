@@ -1,21 +1,56 @@
 import React from 'react';
-import SignupFormContainer from 'components/User/Signup/SignupForm/container/index';
-import HeaderUser from 'components/common/HeaderUser/index';
+import SignupForm from 'components/User/Signup/SignupForm/index';
 import Footer from 'components/common/Footer/index';
-import { withNamespaces } from 'react-i18next';
-import './styles/Signup.scss';
+import HeaderContainer from 'components/common/Header/container/index';
+import globalAxios from 'config/api/index';
 
-class Signup extends React.PureComponent {
+class Signup extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoading: false,
+            errors: [],
+            isCreated: false
+        };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit = data => {
+        this.setState({
+            isLoading: true
+        }, () => {
+            globalAxios.post('/users/', data)
+                .then(response => {
+                    this.setState({
+                        isLoading: false,
+                        errors: [],
+                        isCreated: true
+                    });
+                })
+                .catch(errors => {
+                    this.setState({
+                        isLoading: false,
+                        errors: [errors.response.data.error.message]
+                    });
+                });
+        });
+    }
+
 	render() {
-		const {t} = this.props;
+		const { errors, isLoading, isCreated } = this.state;
 
 		return (
 			<React.Fragment>
-				<HeaderUser/>
-				<div className="signup_content w-100 h-auto position-relative">
-					<div className="p-3 signup_content_form position-relative">
-						<label className="signup_content_form__title d-block mb-3">{t('signup.create_your_account')}</label>
-						<SignupFormContainer />
+				<HeaderContainer/>
+				<div className="user_content w-100 h-auto position-relative">
+					<div className="p-3 user_content__form position-relative">
+						<SignupForm 
+							onSubmit={this.handleSubmit}
+							errors={errors}
+							isLoading={isLoading}
+							isCreated={isCreated} />
 					</div>
 				</div>
 				<Footer />
@@ -24,4 +59,4 @@ class Signup extends React.PureComponent {
 	}
 }
 
-export default withNamespaces()(Signup);
+export default Signup;

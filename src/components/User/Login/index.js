@@ -1,20 +1,67 @@
 import React from 'react';
-import LoginFormContainer from 'components/User/Login/LoginForm/container/index';
+import LoginForm from 'components/User/Login/LoginForm/index';
 import { Redirect } from 'react-router-dom';
-import HeaderUser from 'components/common/HeaderUser/index';
+import HeaderContainer from 'components/common/Header/container/index';
 import Footer from 'components/common/Footer/index';
 import { REDIRECT_PARAMETER } from 'constants/index';
 import { getRedirectUrl, getParseQueryParams } from 'utils/index';
-import './styles/login.scss';
-import 'styles/index.scss';
+import globalAxios from 'config/api/index';
+import { saveToken, saveUser } from 'utils/localStorage/index';
 
-class Login extends React.PureComponent {
+class Login extends React.Component {
+	constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoading: false,
+            errors: []
+        };
+
+        this.handleSubmit = this._handleSubmit.bind(this);
+    }
+
+    _handleSubmit(data) {
+        this.setState({
+            isLoading: true
+        }, () => {
+            globalAxios.post('/users/login', data)
+                .then(response => {
+                	// Save token in local storage
+                	saveToken(response.data.id);
+                	globalAxios.get(`/users/${response.data.userId}`)
+                		.then(response => {
+                			this.setState({
+		                        isLoading: false,
+		                        errors: []
+		                    });
+		                    // Save user in local storage
+                			saveUser(response.data);
+                			this.props.setUser(response.data);
+		                    this.props.setAuthenticated();
+                		})
+                		.catch(errors => {
+		                    this.setState({
+		                        isLoading: false,
+		                        errors: [errors.response.data.error.message]
+		                    });
+		                });
+                })
+                .catch(errors => {
+                    this.setState({
+                        isLoading: false,
+                        errors: [errors.response.data.error.message]
+                    });
+                });
+        });
+    }
+
     getUrlToRedirect = () =>
         getParseQueryParams()[REDIRECT_PARAMETER]
 			? getRedirectUrl()
-			: "/my-network"
+			: "/composition"
 
     render() {
+        const { errors, isLoading } = this.state;
         const { isAuthenticated } = this.props;
 
         if (isAuthenticated)
@@ -22,10 +69,13 @@ class Login extends React.PureComponent {
 
         return (
             <React.Fragment>
-				<HeaderUser/>
-				<div className="content w-100 h-auto position-relative">
-					<div className="p-3 content__login_form position-relative">
-						<LoginFormContainer />
+				<HeaderContainer />
+				<div className="user_content w-100 h-auto position-relative">
+					<div className="p-3 user_content__form position-relative">
+						<LoginForm 
+							onSubmit={this.handleSubmit}
+							errors={errors}
+							isLoading={isLoading} />
 					</div>
 				</div>
 				<Footer />

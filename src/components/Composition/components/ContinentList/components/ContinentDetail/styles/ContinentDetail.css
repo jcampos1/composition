@@ -1,0 +1,109 @@
+.continent_details {
+  padding: 0 1rem 0 0;
+  top: 15px;
+  left: 30%;
+  width: 70%;
+  height: 97%;
+  min-height: 97%;
+  overflow-y: auto;
+  z-index: 1;
+  -webkit-animation-name: open;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: open;
+  animation-duration: 1.5s;
+  /* Safari 4.0 - 8.0 */ }
+
+@-webkit-keyframes open {
+  from {
+    height: 0;
+    min-height: 0; }
+  to {
+    height: 97%;
+    min-height: 97%; } }
+  .continent_details::-webkit-scrollbar {
+    width: 4px;
+    /*=> ancho del scroll*/ }
+  .continent_details::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    /*=> color de fondo del trayecto del scroll */ }
+  .continent_details::-webkit-scrollbar-thumb {
+    background-color: #D3D3D3;
+    /*=> color del indicador del scroll */ }
+  .continent_details .continent_details__container {
+    width: 100%;
+    height: 100%;
+    background-color: #F6F6F6 !important; }
+    .continent_details .continent_details__container .circle {
+      top: 1px;
+      right: 0;
+      width: 50px;
+      height: 50px; }
+    .continent_details .continent_details__container.continent-america {
+      border-color: #53AAAB !important; }
+    .continent_details .continent_details__container.continent-europa {
+      border-color: #FF9800 !important; }
+    .continent_details .continent_details__container.continent-africa {
+      border-color: #7C9B63 !important; }
+    .continent_details .continent_details__container.continent-asia {
+      border-color: #BE2800 !important; }
+    .continent_details .continent_details__container.continent-oceania {
+      border-color: #D3D3D3 !important; }
+    .continent_details .continent_details__container .continent_details__header > small.continent-america, .continent_details .continent_details__container .continent_details__header > h4.continent-america {
+      color: #53AAAB !important;
+      border-bottom-color: #53AAAB !important; }
+    .continent_details .continent_details__container .continent_details__header > small.continent-europa, .continent_details .continent_details__container .continent_details__header > h4.continent-europa {
+      color: #FF9800 !important;
+      border-bottom-color: #FF9800 !important; }
+    .continent_details .continent_details__container .continent_details__header > small.continent-africa, .continent_details .continent_details__container .continent_details__header > h4.continent-africa {
+      color: #7C9B63 !important;
+      border-bottom-color: #7C9B63 !important; }
+    .continent_details .continent_details__container .continent_details__header > small.continent-asia, .continent_details .continent_details__container .continent_details__header > h4.continent-asia {
+      color: #BE2800 !important;
+      border-bottom-color: #BE2800 !important; }
+    .continent_details .continent_details__container .continent_details__header > small.continent-oceania, .continent_details .continent_details__container .continent_details__header > h4.continent-oceania {
+      color: #D3D3D3 !important;
+      border-bottom-color: #D3D3D3 !important; }
+  .continent_details ul {
+    margin-bottom: 1rem !important; }
+    .continent_details ul li {
+      height: auto;
+      border: none;
+      margin-bottom: .2rem;
+      background-color: #F6F6F6 !important;
+      padding: .2rem 0.5rem;
+      border-radius: 0 !important;
+      color: #FFF !important; }
+      .continent_details ul li.continent-america {
+        border: 1px solid #53AAAB;
+        border-left: 5px solid #53AAAB; }
+      .continent_details ul li.continent-europa {
+        border: 1px solid #FF9800;
+        border-left: 5px solid #FF9800; }
+      .continent_details ul li.continent-africa {
+        border: 1px solid #7C9B63;
+        border-left: 5px solid #7C9B63; }
+      .continent_details ul li.continent-asia {
+        border: 1px solid #BE2800;
+        border-left: 5px solid #BE2800; }
+      .continent_details ul li.continent-oceania {
+        border: 1px solid #D3D3D3;
+        border-left: 5px solid #D3D3D3; }
+    .continent_details ul li:first-child > small {
+      color: #FFF !important; }
+    .continent_details ul li:first-child.continent-america {
+      background-color: #53AAAB !important; }
+    .continent_details ul li:first-child.continent-europa {
+      background-color: #FF9800 !important; }
+    .continent_details ul li:first-child.continent-africa {
+      background-color: #7C9B63 !important; }
+    .continent_details ul li:first-child.continent-asia {
+      background-color: #BE2800 !important; }
+    .continent_details ul li:first-child.continent-oceania {
+      background-color: #D3D3D3 !important; }
+  .continent_details .column_description {
+    width: 75%;
+    border-right: 2px solid #D3D3D3; }
+  .continent_details .column_value {
+    width: 25%; }

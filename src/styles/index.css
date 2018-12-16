@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+  background-color: #F6F6F6 !important; }
+
 * {
   font-family: "Open Sans" !important, sans-serif !important;
   color: #666 !important; }
@@ -6,11 +8,17 @@
 button {
   font-weight: 800 !important;
   font-size: 15px !important;
-  border-radius: 10px !important;
-  padding: 12px 30px !important;
+  border-radius: 30px !important;
   color: #fff !important; }
   button.btn-primary {
-    background: linear-gradient(to bottom, #8476f4 0%, #6274e2 51%, #4072d0 100%) !important; }
+    background: #53AAAB !important;
+    border-color: #53AAAB !important; }
+    button.btn-primary small {
+      color: #FFF !important;
+      font-weight: 700; }
+  button.dropdown-toggle:after {
+    margin-left: .955em;
+    vertical-align: .155em; }
   button.btn-raised {
     color: inherit !important; }
   button.btn {
@@ -18,3 +26,74 @@ button {
 
 label b {
   font-weight: 900; }
+
+small.percentage {
+  color: inherit !important;
+  font-size: 40% !important;
+  font-weight: 700 !important; }
+
+div.circle {
+  border-radius: 50%;
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  text-align: center; }
+  div.circle h6 {
+    color: #FFF !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    div.circle h6 small {
+      color: #FFF !important; }
+  div.circle.continent-america {
+    border: 1px solid #53AAAB;
+    background-color: #53AAAB !important; }
+  div.circle.continent-europa {
+    border: 1px solid #FF9800;
+    background-color: #FF9800; }
+  div.circle.continent-africa {
+    border: 1px solid #7C9B63;
+    background-color: #7C9B63; }
+  div.circle.continent-asia {
+    border: 1px solid #BE2800;
+    background-color: #BE2800; }
+  div.circle.continent-oceania {
+    border: 1px solid #D3D3D3;
+    background-color: #D3D3D3; }
+
+form .field_error {
+  color: red !important;
+  font-style: italic; }
+
+.user_content {
+  background-color: #eee;
+  text-align: center; }
+  .user_content .user_content__form {
+    text-align: initial;
+    top: -40px;
+    max-width: 540px;
+    margin: auto; }
+    .user_content .user_content__form .user-form h2.user-form__title {
+      font-weight: 700;
+      color: #53AAAB !important; }
+    .user_content .user_content__form .user-form .user-form__tab .user-form__tab__create_account {
+      color: #4172d0 !important;
+      font-weight: 700; }
+    .user_content .user_content__form .user-form .user-form__tab a:link {
+      text-decoration: none; }
+    .user_content .user_content__form .user-form .user-form__small label {
+      display: table-cell;
+      vertical-align: middle;
+      position: relative; }
+    .user_content .user_content__form .user-form.rounded {
+      border-radius: 20px !important; }
+
+@media (max-width: 576px) {
+  .user_content .user_content__form {
+    max-width: 350px; }
+    .user_content .user_content__form .user-form h2.user-form__title {
+      font-size: 22px; }
+    .user_content .user_content__form .user-form .user-form__tab {
+      padding-left: 0; }
+      .user_content .user_content__form .user-form .user-form__tab label:first-child {
+        padding-left: 50px; } }

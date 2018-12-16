@@ -1,2 +1,3 @@
 export const SET_AUTHENTICATED = 'SET_AUTHENTICATED';
-export const CHANGE_PAGE_SIGNUP_WIZARD = 'CHANGE_PAGE_SIGNUP_WIZARD';
+export const LOGOUT = 'LOGOUT';
+export const SET_USER = 'SET_USER';

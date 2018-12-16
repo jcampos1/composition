@@ -4,86 +4,57 @@
 	"email": "Correo electrónico",
 	"login_title": "Ingresar",
 	"forgot_password": "Recuperar contraseña",
-	"without_account": "¿No tienes una cuenta 1123 Group?",
+	"without_account": "¿No tienes una cuenta?",
 	"create_account": "Crear una cuenta",
 	"name": "Nombre",
-	"yes": "Si",
-	"no": "No",
 	"loading": "Cargando...",
 	"not_found": "No encontrado.",
 	"validations": {
 		"required": "Este campo es requerido",
 		"min": "Esta campo debe ser de al menos {0} caracteres"
 	},
-	"wizard": {
-		"create_user": "Crear usuario",
-		"create_user_loading": "Creando usuario...",
-		"previous": "Anterior",
-		"user_data": "Ingresa tus datos",
-		"network_account": "Crear cuenta de red",
-		"network_account_loading": "Creando cuenta de red...",
-		"finish": "Finalizar",
-		"finish_loading": "Finalizando..."
+	"header": {
+		"hello": "Hola,",
+		"logout": "Cerrar Sesión"
 	},
 	"footer": {
 		"policy": "Politicas de privacidad",
 		"terms_and_conditions": "Términos y condiciones",
 		"year": "2018",
-		"copyright": "1123 Global Inc. Todos los derechos reservados."
+		"copyright": "Análisis de ADN. Todos los derechos reservados."
 	},
 	"language": {
 		"title": "IDIOMA"
 	},
 	"login": {
 		"username_email": "Usuario o correo electrónico",
-		"login_btn": "Ingresar",
+		"login_btn": "Iniciar Sesión",
 		"login_btn_loading": "Iniciando sesión"
 	},
 	"signup": {
-		"first_name": "Nombres",
-		"last_name": "Apellidos",
+		"have_account": "¿Tienes una cuenta?",
+		"first_name": "Nombre",
+		"last_name": "Apellido",
 		"confirm_password": "Confirmar contraseña",
-		"phone_number": "Teléfono",
 		"signup_btn": "Registrarse",
-		"signup_btn_loading": "Registrando",
-		"have_a_sponsor": "¿Tienes patrocinador?",
+		"signup_btn_loading": "Registrando...",
 		"create_your_account": "Cree su cuenta",
 		"validations": {
 			"password_dont_match": "Las contraseñas no coinciden"
 		}
 	},
-	"password_change": {
-		"title": "Cambiar Contraseña",
-		"new_password": "Contraseña nueva",
-		"confirm_password": "Confirmar contraseña",
-		"save_password": "Guardar Contraseña",
-		"saving_password": "Guardando Contraseña..."
+	"continent_list": {
+		"p": "Seleccione una región para detallar el porcentaje de tu composición ancestral.",
+		"show_report": "Ver Informe Científico"
 	},
-	"my_network": {
-		"children_zero_share": "Comparte el siguiente link con las personas que quieres agregar a tu red.",
-		"children_share": "Comparte el código con mas personas e incrementa la comunidad de tu red",
-		"share_code": "Compartir código",
-		"community": "Comunidad",
-		"level": "Nivel",
-		"admin_account": {
-			"add_user": "Agregar Usuario",
-			"add_user_loading": "Agregando Usuario...",
-			"rol_to_user": "Asignar rol al usuario",
-			"owner": "Titular",
-			"co_owner": "Co Titular",
-			"beneficiary": "Beneficiario",
-			"customer": "Cliente",
-			"description": "Un administrador puede realizar depósitos, agregar nuevas cuentas, ver estadísticas y editar la información de la cuenta 1123 Global"
-		}
+	"composition": {
+		"title": "Composition Ancestral",
+		"print": "Imprimir",
+		"share": "Compartir",
+		"p": "Tu ADN cuenta la historia de quien eres y cómo estas conectado a las poblaciones de todo el mundo. Rastrea tu herencia a través de los siglos y descrubre pistas sobre dónde vivieron tus ancestros y cuándo."
 	},
-	"invitation": {
-		"accept": "Aceptar Invitación",
-		"description": "Ha sido invitado a la cuenta '{0}' como '{1}'",
-		"description_success": "¡Ha sido asociado!"
-	},
-	"account": {
-		"invitation_code": "Código de invitación",
-		"account_does_not_exist_description": "Cuenta proporcionada no existe. Ingrese código de invitación",
-		"to_join_description": "Ha sido invitado a unirse a la red de la cuenta '{0}'"
+	"continent": {
+		"details": "Detalles",
+		"region": "Región Geográfica"
 	}
 }

@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import 'styles/variables/_colors.scss';
 
 $font-color: #666;
+$padding-circle: 10px;
+
+body {
+	background-color: #F6F6F6 !important;
+}
 
 * {
 	font-family: "Open Sans" !important, sans-serif !important;
@@ -10,17 +15,22 @@ $font-color: #666;
 button {
 	font-weight: 800 !important;
 	font-size: 15px !important;
-	border-radius: 10px !important;
-	padding: 12px 30px !important;
+	border-radius: 30px !important;
 	color: #fff !important;
 	&.btn-primary {
-		background: linear-gradient(to bottom, 
-			rgba(132,118,244,1) 0%, 
-			rgba(98,116,226,1) 51%, 
-			rgba(64,114,208,1) 100%
-		) !important;
+		background: $primary-color !important;
+		border-color:  $primary-color !important;
+		small {
+			color: #FFF !important;
+			font-weight: 700;
+		}
 	}
-
+	&.dropdown-toggle {
+		&:after {
+			margin-left: .955em;
+			vertical-align: .155em;
+		}
+	}
 	&.btn-raised {
 		color: inherit !important;
 	}
@@ -33,5 +43,120 @@ button {
 label {
 	b {
 		font-weight: 900;
+	}
+}
+
+small {
+	&.percentage {
+		color: inherit !important; 
+		font-size: 40% !important;
+		font-weight: 700 !important;
+	}
+}
+
+div.circle {
+	border-radius: 50%;
+	color: white;
+	display: inline-block;
+	padding: $padding-circle;
+	text-align: center;
+	h6 {
+		color: #FFF !important;
+		top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    small {
+	    	color: #FFF !important;
+	    }
+	}
+  	&.continent-america {
+		border: 1px solid $primary-color;
+		background-color: $primary-color !important;
+	}
+
+	&.continent-europa {
+		border: 1px solid $europa-color-primary;
+		background-color: $europa-color-primary;
+	}
+
+	&.continent-africa {
+		border: 1px solid $africa-color-primary;
+		background-color: $africa-color-primary;
+	}
+
+	&.continent-asia {
+		border: 1px solid $asia-color-secondary;
+		background-color: $asia-color-secondary;
+	}
+
+	&.continent-oceania {
+		border: 1px solid $oceania-color-secondary;
+		background-color: $oceania-color-secondary;
+	}
+}
+
+form {
+	.field_error {
+		color: red !important;
+		font-style: italic;
+	}
+}
+
+.user_content {
+	background-color: #eee;
+	text-align: center;
+	.user_content__form {
+		text-align: initial;
+		top: -40px;
+		max-width: 540px;
+		margin: auto;
+		.user-form {
+			h2.user-form__title {
+		    	font-weight: 700;
+		    	color: $primary-color !important;
+			}
+
+			.user-form__tab {
+				.user-form__tab__create_account {
+					color: #4172d0 !important;
+		    		font-weight: 700;
+				}
+				a:link {
+					text-decoration: none;
+				}
+			}
+
+			.user-form__small {
+				label {
+				    display: table-cell;
+		    		vertical-align: middle;
+		    		position: relative;
+				}
+			}
+
+			&.rounded {
+				border-radius: 20px !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.user_content {
+		.user_content__form {
+			max-width: 350px;
+			.user-form {
+				h2.user-form__title {
+					font-size: 22px;
+				}
+
+				.user-form__tab {
+					padding-left: 0; 
+					label:first-child {
+						padding-left: 50px; 
+					}
+				}
+			}
+		}
 	}
 }

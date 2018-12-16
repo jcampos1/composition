@@ -7,7 +7,8 @@
   display: inline-block;
   margin-right: 12px; }
   .language .language__title label {
-    color: inherit !important; }
+    color: #313D27 !important;
+    font-weight: 400 !important; }
 
 .language .language__options {
   width: 90px;
@@ -15,7 +16,7 @@
   display: inline-block;
   cursor: pointer; }
   .language .language__options label {
-    color: inherit;
+    color: white !important;
     font-size: 14px;
     font-weight: 600; }
     .language .language__options label.language__options__btn-es {
@@ -28,7 +29,7 @@
       line-height: 26px;
       margin: 0; }
     .language .language__options label.language__options__btn-active {
-      background-color: #24bbf0 !important;
+      background-color: #60B1B2 !important;
       color: #fff !important; }
     .language .language__options label.language__options__btn-en {
       color: #666;

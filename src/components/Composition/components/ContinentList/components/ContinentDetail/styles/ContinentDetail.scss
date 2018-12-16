@@ -1,0 +1,163 @@
+@import 'styles/variables/_colors.scss';
+
+.continent_details {
+    padding: 0 1rem 0 0;
+    top: 15px;
+    left: 30%;
+    width: 70%;
+    height: 97%;
+    min-height: 97%;
+    overflow-y: auto;
+    z-index: 1;
+    -webkit-animation-name: open; /* Safari 4.0 - 8.0 */
+	-webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+	animation-name: open;
+	animation-duration: 1.5s;
+	/* Safari 4.0 - 8.0 */
+	@-webkit-keyframes open {
+		from {
+			height: 0;
+			min-height: 0;
+		}
+		to {
+			height: 97%;
+			min-height: 97%;
+		}
+	}
+    &::-webkit-scrollbar {
+	   width: 4px; /*=> ancho del scroll*/
+	}
+	&::-webkit-scrollbar-track {
+	   background-color: rgba(0, 0, 0, 0.1) !important; /*=> color de fondo del trayecto del scroll */
+	}
+	&::-webkit-scrollbar-thumb {
+	   background-color: #D3D3D3; /*=> color del indicador del scroll */
+	}
+    .continent_details__container {
+    	width: 100%;
+	    height: 100%;
+	    background-color: $background-color !important;
+	    .circle {
+	    	top: 1px;
+	    	right: 0;
+	    	width: 50px;
+			height: 50px;
+		}
+		&.continent-america {
+			border-color: $primary-color !important;
+		}
+
+		&.continent-europa {
+			border-color: $europa-color-primary !important;
+		}
+
+		&.continent-africa {
+			border-color: $africa-color-primary !important;
+		}
+
+		&.continent-asia {
+			border-color: $asia-color-secondary !important;
+		}
+
+		&.continent-oceania {
+			border-color: $oceania-color-secondary !important;
+		}
+		.continent_details__header {
+			>small, >h4 {
+				&.continent-america {
+	    			color: $primary-color !important;
+	    			border-bottom-color: $primary-color !important;
+				}
+
+				&.continent-europa {
+					color: $europa-color-primary !important;
+					border-bottom-color: $europa-color-primary !important;
+				}
+
+				&.continent-africa {
+					color: $africa-color-primary !important;
+					border-bottom-color: $africa-color-primary !important;
+				}
+
+				&.continent-asia {
+					color: $asia-color-secondary !important;
+					border-bottom-color: $asia-color-secondary !important;
+				}
+
+				&.continent-oceania {
+					color: $oceania-color-secondary !important;
+					border-bottom-color: $oceania-color-secondary !important;
+				}
+			}
+		}
+    }
+
+    ul {
+    	margin-bottom: 1rem !important;
+    	li {
+    		height: auto;
+    		border: none;
+    		margin-bottom: .2rem;
+    		background-color: $background-color !important;
+    		padding: .2rem 0.5rem;
+    		border-radius: 0 !important;
+    		color: #FFF !important;
+    		&.continent-america {
+    			border: 1px solid $primary-color;
+				border-left: 5px solid $primary-color;
+			}
+
+			&.continent-europa {
+				border: 1px solid $europa-color-primary;
+				border-left: 5px solid $europa-color-primary;
+			}
+
+			&.continent-africa {
+				border: 1px solid $africa-color-primary;
+				border-left: 5px solid $africa-color-primary;
+			}
+
+			&.continent-asia {
+				border: 1px solid $asia-color-secondary;
+				border-left: 5px solid $asia-color-secondary;
+			}
+
+			&.continent-oceania {
+				border: 1px solid $oceania-color-secondary;
+				border-left: 5px solid $oceania-color-secondary;
+			}
+    	}
+    	li:first-child {
+    		>small {
+    			color: #FFF !important;
+    		}
+			&.continent-america {
+    			background-color: $primary-color !important;
+			}
+
+			&.continent-europa {
+				background-color: $europa-color-primary !important;
+			}
+
+			&.continent-africa {
+				background-color: $africa-color-primary !important;
+			}
+
+			&.continent-asia {
+				background-color: $asia-color-secondary !important;
+			}
+
+			&.continent-oceania {
+				background-color: $oceania-color-secondary !important;
+			}
+		}
+    }
+
+    .column_description {
+    	width: 75%;
+    	border-right: 2px solid #D3D3D3;
+    }
+    .column_value {
+    	width: 25%;
+    }
+}

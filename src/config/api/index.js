@@ -18,7 +18,7 @@ globalAxios.interceptors.request.use(config => {
     // Do something before request is sent
     const token = getToken();
     if (token)
-        config.headers["Authorization"] = `Token ${token}`;
+        config.url = `${config.url}?access_token=${token}`;
     return config;
 }, error => {
     // Do something with request error
@@ -30,7 +30,7 @@ globalAxios.interceptors.response.use( response => {
     return response;
   }, error => {
     // Do something with response error
-    if(error.response.status === 403 || error.response.status === 401)
+    if(error.response.data.statusCode === 403 || error.response.data.statusCode === 401)
         window.location.href = `/login?${REDIRECT_PARAMETER}=${getNextPage()}`;
 
     // Trow errr again (may be need for some other catch)

@@ -11,7 +11,8 @@ $margin-between-containers: 12px;
 		display: inline-block;
 		margin-right: $margin-between-containers;
 		label {
-			color: inherit !important;
+			color: #313D27 !important;
+			font-weight: 400 !important;
 		}
 	}
 
@@ -21,7 +22,7 @@ $margin-between-containers: 12px;
 		display: inline-block;
 		cursor: pointer;
 		label {
-			color: inherit;
+			color: white !important;
 			font-size: 14px;
     		font-weight: 600;
 			&.language__options__btn-es {
@@ -36,7 +37,7 @@ $margin-between-containers: 12px;
 			}
 
 			&.language__options__btn-active {
-				background-color: #24bbf0 !important;
+				background-color: #60B1B2 !important;
 				color: #fff !important;
 			}
 

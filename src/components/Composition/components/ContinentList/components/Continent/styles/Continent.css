@@ -1,0 +1,159 @@
+.continent {
+  margin-bottom: .5rem !important;
+  height: 110px;
+  overflow: visible;
+  z-index: 0; }
+  .continent.continent-unselected {
+    width: 25%; }
+  .continent:before {
+    content: "";
+    width: 5px !important;
+    height: 100% !important;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .continent .continent__content {
+    height: 100px;
+    margin-right: 15px; }
+    .continent .continent__content.continent__content-unselected {
+      display: none !important; }
+    .continent .continent__content .continent__content__description h5 {
+      font-weight: 700; }
+    .continent .continent__content .continent__content__description button {
+      padding: 0.05rem .5rem; }
+      .continent .continent__content .continent__content__description button small {
+        color: #FFF !important;
+        font-weight: 700; }
+      .continent .continent__content .continent__content__description button.dropdown-toggle:after {
+        margin-left: .955em;
+        vertical-align: .155em; }
+    .continent .continent__content .continent__content__description.continent__content__description-america small.continent__content__description__geo, .continent .continent__content .continent__content__description.continent__content__description-america h5 {
+      color: #53AAAB !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-america button {
+      background-color: #53AAAB !important;
+      border-color: #53AAAB !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-europa small.continent__content__description__geo, .continent .continent__content .continent__content__description.continent__content__description-europa h5 {
+      color: #FF9800 !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-europa button {
+      background-color: #FF9800 !important;
+      border-color: #FF9800 !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-africa small.continent__content__description__geo, .continent .continent__content .continent__content__description.continent__content__description-africa h5 {
+      color: #3E4D31 !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-africa button {
+      background-color: #3E4D31 !important;
+      border-color: #3E4D31 !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-asia small.continent__content__description__geo, .continent .continent__content .continent__content__description.continent__content__description-asia h5 {
+      color: #BE2800 !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-asia button {
+      background-color: #BE2800 !important;
+      border-color: #BE2800 !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-oceania small.continent__content__description__geo, .continent .continent__content .continent__content__description.continent__content__description-oceania h5 {
+      color: #BFBFBF !important; }
+    .continent .continent__content .continent__content__description.continent__content__description-oceania button {
+      background-color: #BFBFBF !important;
+      border-color: #BFBFBF !important; }
+    .continent .continent__content .continent__content__value {
+      text-align: center;
+      width: 75px !important;
+      height: 82px !important;
+      right: 0.5rem; }
+      .continent .continent__content .continent__content__value .circle {
+        width: 75px;
+        height: 75px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .continent .continent__content .continent__content__value .circle.circle-america {
+          background-color: #53AAAB;
+          border: 1px solid #53AAAB; }
+        .continent .continent__content .continent__content__value .circle.circle-europa {
+          background-color: #FF9800;
+          border: 1px solid #FF9800; }
+        .continent .continent__content .continent__content__value .circle.circle-africa {
+          background-color: #3E4D31;
+          border: 1px solid #3E4D31; }
+        .continent .continent__content .continent__content__value .circle.circle-asia {
+          background-color: #BE2800;
+          border: 1px solid #BE2800; }
+        .continent .continent__content .continent__content__value .circle.circle-oceania {
+          background-color: #D3D3D3;
+          border: 1px solid #D3D3D3; }
+        .continent .continent__content .continent__content__value .circle h4 {
+          margin-top: 10px;
+          color: #FFF !important; }
+          .continent .continent__content .continent__content__value .circle h4 small {
+            color: inherit !important;
+            font-weight: 700; }
+    .continent .continent__content .continent__content__description.continent__content-unselected, .continent .continent__content .continent__content__value.continent__content-unselected {
+      display: none !important; }
+  .continent.continent-america {
+    border: 1px solid #A9D4D5; }
+    .continent.continent-america:before {
+      background-image: linear-gradient(to bottom, #53AAAB, #53AAAB 60%, #A9D4D5 40%, #A9D4D5); }
+  .continent.continent-europa {
+    border: 1px solid #FFCB7F; }
+    .continent.continent-europa:before {
+      background-image: linear-gradient(to bottom, #FF9800, #FF9800 60%, #FFCB7F 40%, #FFCB7F); }
+  .continent.continent-africa {
+    border: 1px solid #7C9B63; }
+    .continent.continent-africa:before {
+      background-image: linear-gradient(to bottom, #7C9B63, #7C9B63 60%, #3E4D31 40%, #3E4D31); }
+  .continent.continent-asia {
+    border: 1px solid #BE2800; }
+    .continent.continent-asia:before {
+      background-image: linear-gradient(to bottom, #FF3500, #FF3500 60%, #BE2800 40%, #BE2800); }
+  .continent.continent-oceania {
+    border: 1px solid #D3D3D3; }
+    .continent.continent-oceania:before {
+      background-image: linear-gradient(to bottom, #BFBFBF, #BFBFBF 60%, #D3D3D3 40%, #D3D3D3); }
+  .continent .continent__img {
+    background-repeat: no-repeat;
+    height: 100px;
+    border-right: 1px solid #dee2e6; }
+    .continent .continent__img.continent__img-unselected {
+      border-right: none;
+      opacity: 0.4; }
+    .continent .continent__img.continent__img-america {
+      background-image: url("/images/america.svg");
+      background-size: 150% 100%; }
+    .continent .continent__img.continent__img-europa {
+      background-image: url("/images/europa.png");
+      background-size: 100% 90%;
+      background-position: center; }
+    .continent .continent__img.continent__img-africa {
+      background-image: url("/images/africa.svg");
+      background-size: 250%;
+      background-origin: content-box;
+      background-position-y: center; }
+    .continent .continent__img.continent__img-asia {
+      background-image: url("/images/asia.svg");
+      background-size: 150%; }
+    .continent .continent__img.continent__img-oceania {
+      background-image: url("/images/oceania.png");
+      background-size: 100% 90%;
+      background-position: center; }
+  .continent .continent__img_description {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer; }
+    .continent .continent__img_description:hover .circle {
+      width: 55px;
+      height: 55px;
+      background-color: #F6F6F6; }
+    .continent .continent__img_description .circle {
+      width: 50px;
+      height: 50px;
+      transition: width 0.2s, height 0.2s; }
+      .continent .continent__img_description .circle h6 {
+        color: inherit !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .continent .continent__img_description .circle h6 small {
+          color: inherit !important; }
+
+.continent-unselected.continent-america, .continent-unselected.continent-europa, .continent-unselected.continent-africa, .continent-unselected.continent-asia, .continent-unselected.continent-oceania {
+  border: 1px solid #D3D3D3 !important; }

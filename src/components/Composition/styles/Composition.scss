@@ -1,0 +1,108 @@
+@import 'styles/variables/_colors.scss';
+
+.composition {
+	.composition__ancestral {
+		padding-left: 0;
+		padding-right: 0;
+		overflow: hidden;
+		.composition__ancestral__map {
+			position: relative !important;
+			overflow: hidden;
+			img:first-child {
+				z-index: -1000;
+				width: 80%;
+				left: 40%;
+				top: 35%;
+				transform: translate(-50%, -50%);
+			    -webkit-transform: translate(-50%, -50%);
+			    transition: width 2s, left 1.5s;
+			    &.composition__ancestral__map-america {
+			    	width: 110% !important;
+			    	left: 70%;
+			    }
+			    &.composition__ancestral__map-oceania {
+			    	width: 170% !important;
+			    	left: -30%;
+			    	top: 0;
+			    }
+			    &.composition__ancestral__map-asia {
+			    	width: 167% !important;
+				    left: -45px;
+				    top: 50%;
+			    }
+			    &.composition__ancestral__map-europa {
+			    	width: 550% !important;
+				    left: 10%;
+				    top: 107%;
+			    }
+			    &.composition__ancestral__map-africa {
+			    	width: 180% !important;
+				    left: 20%;
+				    top: 30%;
+			    }
+			}
+			img:last-child {
+				z-index: 1000;
+				width: 30px;
+				right:50px;
+				bottom: 250px;
+			}
+		}
+		.composition__ancestral__text {
+			display: table;
+			>p, >div {
+				display: table-cell;
+			}
+			.circle {
+				position: relative;
+				width: 100px;
+				height: 100px;
+				background-color: $primary-color;
+				border-color: $primary-color;
+				h4 {
+					position: absolute;
+					left: 50%;
+				    top: 50%;
+				    transform: translate(-50%, -50%);
+				    -webkit-transform: translate(-50%, -50%);
+					color: #FFF !important;
+				}
+			}
+		}
+		.composition__ancestral_progress_bar {
+			height: 25px;
+			width: 100%;
+			border-radius: 25px;
+			box-shadow: 8.5rem 0 $primary-color inset, 
+						10.5rem 0 $secondary-color inset, 
+						14.5rem 0 #295555 inset,
+						26rem 0 $africa-color-primary inset,
+						32rem 0 $asia-color-secondary inset,
+						34rem 0 $asia-color-primary inset,
+						40rem 0 #7f4c00 inset,
+						41rem 0 #FFF0A5 inset, 
+						50rem 0 #FFB03B inset,
+						60rem 0 #7f4c00 inset;
+		}
+		.composition__ancestral__buttons {
+			bottom: -15px;
+			right: 30px;
+			button {
+				padding-left: 25px;
+				padding-right: 25px;
+				small {
+					color: #FFF !important;
+					font-weight: 700 !important;
+				}
+
+				&:first-child {
+					margin-right: 15px;
+					background-color: red !important;
+				}
+				&:last-child {
+					background-color: $primary-color;
+				}
+			}
+		}
+	}
+}

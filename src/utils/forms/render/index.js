@@ -1,47 +1,26 @@
 import React from 'react';
-import {Field} from 'react-final-form';
-import {FieldError} from 'utils/forms/validators/index';
 
-export const InputField = ({name, labelText, placeholder, validate, type, className}) =>
-	<div className="floating-label">
-		<label>{labelText}</label>
-		<Field 
-			name={name}
-			component="input" 
-			type={type}
-			className={className}
-			placeholder={placeholder ? placeholder : labelText}
-			validate={validate} />
-		<FieldError name={name} />
-	</div>
-
-export const SwitchField = ({id, name, type, checked, className, handleChange}) =>
-	<div className="custom-control custom-switch d-inline-block">
-		<Field 
-			id={id}
-			name={name}
-			component="input" 
-			type={type}
-			className={className}
-			onChange={handleChange}
-			checked={checked} />
-		<span className="custom-control-track"/>
-		<label className="custom-control-label" htmlFor={id}/>
-	</div>
-
-export const RadioField = ({id, name, value, checked, labelText, validate, className}) =>
-	<React.Fragment>
-		<Field
-			id={id} 
-			name={name}
-			component="input"
-			value={value}
-			checked={checked}
-			type="radio"
-			className={className}
-			validate={validate} />
-		<label className="form-check-label" htmlFor={id}>
-        	{labelText}
-        </label>
-		<FieldError name={name} />
-	</React.Fragment>
+export const RenderInput = (props) => {
+    return (
+        <React.Fragment>
+	        <label>{props.placeholder}</label>
+		  	<div className="input-group">
+		  		<div className="input-group-prepend">
+		          <span className="input-group-text" id="inputGroupPrepend3">
+		          	<img className="material-icons" src={props.img} width="23" alt="language" />
+		          </span>
+		        </div>
+	      		<input 
+	      			name={props.name}
+	      			type={props.type}
+	      			className={props.className}
+					placeholder={props.placeholder} 
+					{...props.input} />
+			</div>
+      		{
+      			props.meta.touched && props.meta.error && 
+      				<small className="field_error">{props.meta.error}</small>
+      		}
+    	</React.Fragment>
+    )
+}
