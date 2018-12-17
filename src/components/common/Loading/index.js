@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Loading.scss';
+import './styles/Loading.css';
 
 class Loading extends React.PureComponent {
 	render() {

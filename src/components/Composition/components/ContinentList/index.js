@@ -3,7 +3,7 @@ import { withNamespaces } from 'react-i18next';
 import ContinentContainer from 'components/Composition/components/ContinentList/components/Continent/container/index';
 import ContinentDetail from 'components/Composition/components/ContinentList/components/ContinentDetail/index';
 import PropTypes from 'prop-types';
-import './styles/ContinentList.scss';
+import './styles/ContinentList.css';
 
 class ContinentList extends React.PureComponent {
 	render() {

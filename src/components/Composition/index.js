@@ -5,7 +5,7 @@ import HeaderContainer from 'components/common/Header/container/index';
 import ContinentListContainer from 'components/Composition/components/ContinentList/container/index';
 import { withNamespaces } from 'react-i18next';
 import globalAxios from 'config/api/index';
-import './styles/Composition.scss';
+import './styles/Composition.css';
 
 class Composition extends React.Component {
     constructor(props) {

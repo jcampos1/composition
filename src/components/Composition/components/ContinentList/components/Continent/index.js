@@ -3,7 +3,7 @@ import { withNamespaces } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import globalAxios from 'config/api/index';
-import './styles/Continent.scss';
+import './styles/Continent.css';
 
 class Continent extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import PropTypes from 'prop-types';
-import './styles/ContinentDetail.scss';
+import './styles/ContinentDetail.css';
 
 
 class ContinentDetail extends React.PureComponent {

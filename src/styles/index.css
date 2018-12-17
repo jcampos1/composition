@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Monserrat");
 body {
+  font-family: "Monserrat" !important;
   background-color: #F6F6F6 !important; }
 
 * {
@@ -46,14 +48,14 @@ div.circle {
     div.circle h6 small {
       color: #FFF !important; }
   div.circle.continent-america {
-    border: 1px solid #53AAAB;
+    border: 1px solid #53AAAB !important;
     background-color: #53AAAB !important; }
   div.circle.continent-europa {
-    border: 1px solid #FF9800;
-    background-color: #FF9800; }
+    border: 1px solid #FF9800 !important;
+    background-color: #FF9800 !important; }
   div.circle.continent-africa {
-    border: 1px solid #7C9B63;
-    background-color: #7C9B63; }
+    border: 1px solid #7C9B63 !important;
+    background-color: #7C9B63 !important; }
   div.circle.continent-asia {
     border: 1px solid #BE2800;
     background-color: #BE2800; }

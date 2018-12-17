@@ -4,7 +4,7 @@ import Language from 'components/common/Language/index';
 import globalAxios from 'config/api/index';
 import { removeToken, removeUser } from 'utils/localStorage/index';
 import { withRouter } from 'react-router-dom';
-import './styles/Header.scss';
+import './styles/Header.css';
 
 
 class Header extends React.Component {

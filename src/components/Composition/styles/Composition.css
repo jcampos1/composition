@@ -44,9 +44,7 @@
     .composition .composition__ancestral .composition__ancestral__text .circle {
       position: relative;
       width: 100px;
-      height: 100px;
-      background-color: #53AAAB;
-      border-color: #53AAAB; }
+      height: 100px; }
       .composition .composition__ancestral .composition__ancestral__text .circle h4 {
         position: absolute;
         left: 50%;
