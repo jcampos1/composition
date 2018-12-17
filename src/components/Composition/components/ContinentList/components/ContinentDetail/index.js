@@ -36,7 +36,9 @@ class ContinentDetail extends React.PureComponent {
                         </li>
                         {
                             continent.populations && continent.populations.map((population, index) => (
-                                <li className={`list-group-item list-group-item-primary continent-${continent.key}`}>
+                                <li 
+                                    key={`population${index}`}
+                                    className={`list-group-item list-group-item-primary continent-${continent.key}`}>
                                     <span className="column_description d-inline-block">
                                         <small className="text-capitalize">{ population.name }</small>
                                     </span>
