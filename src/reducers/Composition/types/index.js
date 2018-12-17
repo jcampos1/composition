@@ -1,1 +1,2 @@
 export const SET_CONTINENT = 'SET_CONTINENT';
+export const ADD_POPULATION = 'ADD_POPULATION';

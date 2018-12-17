@@ -21,7 +21,7 @@ class Signup extends React.Component {
         this.setState({
             isLoading: true
         }, () => {
-            globalAxios.post('/users/', data)
+            globalAxios.post('/custom-users/', data)
                 .then(response => {
                     this.setState({
                         isLoading: false,

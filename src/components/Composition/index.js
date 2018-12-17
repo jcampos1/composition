@@ -1,13 +1,51 @@
 import React from 'react';
 import Footer from 'components/common/Footer/index';
+import Loading from 'components/common/Loading/index';
 import HeaderContainer from 'components/common/Header/container/index';
 import ContinentListContainer from 'components/Composition/components/ContinentList/container/index';
 import { withNamespaces } from 'react-i18next';
+import globalAxios from 'config/api/index';
 import './styles/Composition.scss';
 
-class Composition extends React.PureComponent {
+class Composition extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoading: true,
+            continents: null
+        };
+    }
+
+    componentDidMount() {
+        globalAxios.get('/continents')
+            .then(({data}) => {
+                // Creo un nuevo arreglo solo para que aparezcan los elementos en el mismo orden que en el diseño
+                let america = data.find(({name}) => name === "America");
+                america.key = "america";
+                let europa = data.find(({name}) => name === "Europa");
+                europa.key = "europa";
+                let africa = data.find(({name}) => name === "Africa");
+                africa.key = "africa";
+                let asia = data.find(({name}) => name === "Asia");
+                asia.key = "asia";
+                let oceania = data.find(({name}) => name === "Oceania");
+                oceania.key = "oceania";
+                this.setState({
+                    continents: [america, europa, africa, asia, oceania]
+                });
+            })
+            .catch(errors => {
+                console.log(errors);
+            });
+    }
+
 	render() {
+        const { continents } = this.state;
         const { t, selectedContinent } = this.props;
+
+        if ( continents === null )
+            return(<Loading />);
 
 		return (
 			<React.Fragment>
@@ -15,7 +53,7 @@ class Composition extends React.PureComponent {
 				<div className="composition container-fluid h-auto pr-0">
                     <div className="row">
                         <div className="composition__continent_list col-sm-4 pr-0 position-relative pb-4">
-                            <ContinentListContainer />
+                            <ContinentListContainer continents={continents} />
                             <button className="btn btn-primary btn-sm d-block m-auto dropdown-toggle" type="button">
                                 <small>{t('continent_list.show_report')}</small>
                             </button>
@@ -27,8 +65,13 @@ class Composition extends React.PureComponent {
                                     <p className="text-justify pr-4">
                                         {t('composition.p')}
                                     </p>
-                                    <div className="circle border">
-                                        <h4>100<small className="percentage">%</small></h4>
+                                    <div className={`circle continent-${selectedContinent ? selectedContinent.key : 'america'} border`}>
+                                        <h4>
+                                            {
+                                                selectedContinent ? selectedContinent.ancestria_snp : '100'
+                                            }
+                                            <small className="percentage">%</small>
+                                        </h4>
                                     </div>
                                 </div>
                                 <div className="composition__ancestral_progress_bar border mb-2" />

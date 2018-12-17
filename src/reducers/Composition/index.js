@@ -11,6 +11,14 @@ const compositionReducer = (state=INITIAL_STATE, action) => {
   			...state,
   			selectedContinent: action.continent
   		};
+  	case types.ADD_POPULATION:
+  		return {
+  			...state,
+  			selectedContinent: {
+  				...state.selectedContinent,
+  				populations: action.populations
+  			}
+  		};
     default: return state;
   }
 }

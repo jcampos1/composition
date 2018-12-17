@@ -15,7 +15,7 @@ class Header extends React.Component {
     }
 
     _handleLogout = () => {
-    	globalAxios.post('/users/logout').then( response => {
+    	globalAxios.post('/custom-users/logout').then( response => {
     		removeToken();
     		removeUser();
     		this.props.logout();

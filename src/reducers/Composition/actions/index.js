@@ -6,3 +6,11 @@ export const setContinent = continent => {
 		continent
 	}
 }
+
+export const addPopulations = populations => {
+	return {
+		type: types.ADD_POPULATION,
+		populations
+	}
+}
+

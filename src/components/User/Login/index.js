@@ -24,11 +24,11 @@ class Login extends React.Component {
         this.setState({
             isLoading: true
         }, () => {
-            globalAxios.post('/users/login', data)
+            globalAxios.post('/custom-users/login', data)
                 .then(response => {
                 	// Save token in local storage
                 	saveToken(response.data.id);
-                	globalAxios.get(`/users/${response.data.userId}`)
+                	globalAxios.get(`/custom-users/${response.data.userId}`)
                 		.then(response => {
                 			this.setState({
 		                        isLoading: false,

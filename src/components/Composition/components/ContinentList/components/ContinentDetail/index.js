@@ -16,14 +16,14 @@ class ContinentDetail extends React.PureComponent {
                         	{t('continent.region')}
                         </small>
                         <h4 className={`continent-${continent.key} border-bottom`}>
-                        	America
+                        	{continent.name}
                         </h4>
                         <div className={`circle circle-america continent-${continent.key} position-absolute border m-auto`}>
                             <h6 className="position-absolute">
-                                {"23.2".split('.')[0]}
+                                {continent.ancestria_snp.split('.')[0]}
                                 {
-                                    "23.2".split('.')[1] && (
-                                        <small className="continent__content__value__decimal">.{"23.2".split('.')[1]}</small>
+                                    continent.ancestria_snp.split('.')[1] && (
+                                        <small className="continent__content__value__decimal">.{continent.ancestria_snp.split('.')[1]}</small>
                                     )
                                 }
                                 <small className="percentage">%</small>
@@ -31,15 +31,21 @@ class ContinentDetail extends React.PureComponent {
                          </div>
                     </div>
                     <ul className="list-group">
-                    	<li className={`list-group-item continent-${continent.key}`}><small>Norte América</small></li>
-                    	<li className={`list-group-item list-group-item-primary continent-${continent.key}`}>
-                    		<span className="column_description d-inline-block">
-                    			<small>Maya, Yucatan</small>
-                    		</span>
-                    		<span className="column_value d-inline-block text-right">
-                    			<small>5.39%</small>
-                    		</span>
-                    	</li>
+                    	<li className={`list-group-item continent-${continent.key}`}>
+                            <small>{continent.name}</small>
+                        </li>
+                        {
+                            continent.populations && continent.populations.map((population, index) => (
+                                <li className={`list-group-item list-group-item-primary continent-${continent.key}`}>
+                                    <span className="column_description d-inline-block">
+                                        <small className="text-capitalize">{ population.name }</small>
+                                    </span>
+                                    <span className="column_value d-inline-block text-right">
+                                        <small>{ population.result_percentage }%</small>
+                                    </span>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

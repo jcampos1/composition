@@ -2,6 +2,7 @@ import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import globalAxios from 'config/api/index';
 import './styles/Continent.scss';
 
 class Continent extends React.Component {
@@ -11,8 +12,16 @@ class Continent extends React.Component {
         this.handleSelectContinent = continent => this._handleSelectContinent.bind(this, continent);
     }
 
-    _handleSelectContinent = data => 
-        this.props.setContinent(data);
+    _handleSelectContinent = continent => {
+        this.props.setContinent(continent);
+        globalAxios.get(`/continents/${continent.id}/populations`)
+            .then(({data}) => {
+                this.props.addPopulations(data);
+            })
+            .catch(errors => {
+                console.log(errors);
+            });
+    }
 
 
 	render() {
@@ -38,10 +47,12 @@ class Continent extends React.Component {
                                     onClick={this.handleSelectContinent(continent)}>
                                         <div className={`circle circle-${key} position-relative border d-block m-auto`}>
                                             <h6 className="position-absolute">
-                                                {"23.2".split('.')[0]}
+                                                {continent.ancestria_snp.split('.')[0]}
                                                 {
-                                                    "23.2".split('.')[1] && (
-                                                        <small className="continent__content__value__decimal">.{"23.2".split('.')[1]}</small>
+                                                    continent.ancestria_snp.split('.')[1] && (
+                                                        <small className="continent__content__value__decimal">
+                                                            .{continent.ancestria_snp.split('.')[1]}
+                                                        </small>
                                                     )
                                                 }
                                                 <small className="percentage">%</small>

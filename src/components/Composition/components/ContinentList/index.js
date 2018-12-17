@@ -1,13 +1,13 @@
 import React from 'react';
 import { withNamespaces } from 'react-i18next';
-import './styles/ContinentList.scss';
-import { CONTINENTS } from 'components/Composition/components/ContinentList/constants/index';
 import ContinentContainer from 'components/Composition/components/ContinentList/components/Continent/container/index';
 import ContinentDetail from 'components/Composition/components/ContinentList/components/ContinentDetail/index';
+import PropTypes from 'prop-types';
+import './styles/ContinentList.scss';
 
 class ContinentList extends React.PureComponent {
 	render() {
-        const { t, selectedContinent } = this.props;
+        const { t, selectedContinent, continents } = this.props;
 
 		return (
             <div className="continent_list container border position-relative shadow-sm rounded px-2 pb-2">
@@ -22,7 +22,7 @@ class ContinentList extends React.PureComponent {
                 			)
                 		}
 	                	{
-	                		CONTINENTS.map((continent, index) => (
+	                		continents.map((continent, index) => (
 	                			<ContinentContainer 
 	                				key={`continent_list_element${index}`}
 	                				continent={continent} />
@@ -34,5 +34,9 @@ class ContinentList extends React.PureComponent {
 		);
 	}
 }
+
+ContinentList.propTypes = {
+    continents: PropTypes.array.isRequired
+};
 
 export default withNamespaces()(ContinentList);
